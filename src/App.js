@@ -6,6 +6,7 @@ import Faq from "./pages/Faq.js";
 import User from "./pages/User.js";
 import Discovery from "./pages/Discovery.js";
 import Navbar from "./components/Navbar.js";
+import Verification from "./pages/Verification.js";
 import history from "./history";
 
 /*
@@ -91,10 +92,6 @@ export default class App extends Component{
     this.update_active(window.location.pathname);
   }
 
-  navigate = (page) => {
-    history.push(page);
-  }
-
   render(){  
     return (
       <div className="app">
@@ -102,9 +99,10 @@ export default class App extends Component{
           <Route exact path="/faq" component={Faq}/>
           <Route path="/user" component={User}/>
           <Route path="/discovery" component={Discovery}/>
+          <Route path="/verify" component={Verification}/>
           <Route exact path="/" component={Home}/>
         </Router>
-        <Navbar navigate={this.navigate} history={history}/> 
+        <Navbar history={history}/> 
       </div>
     );
   }

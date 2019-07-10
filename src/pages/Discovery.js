@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-//import cookie from "react-cookies";
+import cookie from "react-cookies";
 import '../css/pages/discovery.css';
 import VerifiedTag from "../components/VerifiedTag.js";
 import UnverifiedTag from "../components/UnverifiedTag.js";
@@ -72,6 +72,15 @@ export default class Discovery extends Component {
             url = url + "?tag=" + tag;            
         }
 
+        // if the user has a user name add it to the url
+        if (cookie.load("user_name") !== undefined) {
+            // if there is a parameter before, a '&' is used
+            if(tag.length > 1)
+                url = url + "&user_name=" + cookie.load("user_name");
+            else
+                url = url + "?user_name=" + cookie.load("user_name");
+        }
+
         // hit the verify endpoint
         return fetch(url, {
             method: "GET" 
@@ -86,9 +95,7 @@ export default class Discovery extends Component {
                 // convert data to JSON
                 let json_data = JSON.parse(data);
 
-                console.log(json_data);
 
-                
                 // add small delay to allow for reading fun fact!
                 setTimeout(() => {
 
@@ -98,6 +105,10 @@ export default class Discovery extends Component {
                         tag_is_verified: json_data.tag_verified,
                         verification_data: json_data
                     });
+
+                    // save the user's user name
+                    cookie.save("user_name",json_data.user_name, {path: "/"});
+
                 },2000);
 
             });

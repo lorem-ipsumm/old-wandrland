@@ -24,17 +24,17 @@ export default class Navbar extends Component {
 
         // navigate to faq
         if (target.classList.contains("faq")) {
-            this.props.navigate("/faq");
+            this.props.history.push("/faq");
         } 
 
         // navigate to home
         if (target.classList.contains("home")) {
-            this.props.navigate("/");
+            this.props.history.push("/");
         }
 
         // navigate to user
         if (target.classList.contains("user")) {
-            this.props.navigate("/user");
+            this.props.history.push("/user");
         }
 
         // get the other buttons
