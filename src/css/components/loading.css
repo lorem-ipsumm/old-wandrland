@@ -19,6 +19,58 @@
   font-size: 18pt;
   margin-bottom: 15px;
   position: relative;
+  display: block;
+}
+
+.loading:after {
+  content: '';
+  position: absolute;
+  width: 50%;
+  bottom: 0;
+  height: 5px;
+  background-color: #EE4266;
+  -webkit-animation: slide 2s ease-in-out;
+          animation: slide 2s ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes slide {
+  0% {
+    left: 0;
+    width: 0;
+  }
+  50% {
+    right: 0;
+    width: 100%;
+  }
+  90% {
+    right: 0;
+    width: 0;
+  }
+  100% {
+    right: 0;
+    width: 0;
+  }
+}
+
+@keyframes slide {
+  0% {
+    left: 0;
+    width: 0;
+  }
+  50% {
+    right: 0;
+    width: 100%;
+  }
+  90% {
+    right: 0;
+    width: 0;
+  }
+  100% {
+    right: 0;
+    width: 0;
+  }
 }
 
 .fact-wrapper {

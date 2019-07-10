@@ -89,7 +89,10 @@ export default class Discovery extends Component {
                 console.log(json_data);
 
                 
+                // add small delay to allow for reading fun fact!
                 setTimeout(() => {
+
+                    // change state to move on to next steps
                     this.setState({
                         verification_complete: true,
                         tag_is_verified: json_data.tag_verified,

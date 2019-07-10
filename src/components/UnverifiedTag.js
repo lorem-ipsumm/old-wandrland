@@ -17,8 +17,7 @@ export default class UnverifiedTag extends Component {
         } else {
             return(
                 <div className="info-text">
-                    <span>It looks like this isn't a verified tag</span>
-                    <span>If you believe that this is a mistake, try scanning again.</span>
+                    <span>It looks like this isn't a verified tag. If you believe that this is a mistake, try scanning again.</span>
                 </div>
             );
         }
