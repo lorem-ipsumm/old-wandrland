@@ -1,0 +1,67 @@
+.navbar-wrapper {
+  background-color: white;
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.icon-section {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  -webkit-transition: all ease 0.2s;
+  transition: all ease 0.2s;
+}
+
+.icon-section span {
+  opacity: 0;
+  height: 0px;
+  -webkit-transition: all ease 0.2s;
+  transition: all ease 0.2s;
+  font-size: 7pt;
+}
+
+.icon-section svg {
+  stroke: #1e1e1e;
+}
+
+.icon-section.active {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.icon-section.active svg {
+  stroke: #EE4266;
+}
+
+.icon-section.active span {
+  height: 5px;
+  opacity: 1;
+  color: #1e1e1e;
+}
+/*# sourceMappingURL=navbar.css.map */

@@ -1,0 +1,64 @@
+/*
+    This CSS class holds styles for components/other things that show up on multiple pages
+*/
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Varela Round', sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: calc(100vh - 60px);
+  margin: 0;
+}
+
+#root {
+  width: 100vw;
+  height: 100%;
+}
+
+.app {
+  width: 100vw;
+  height: 100%;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  background: #F4F4F4;
+}
+
+.wrapper div {
+  -webkit-animation: fade-in .5s;
+          animation: fade-in .5s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+}
+
+@-webkit-keyframes fade-in {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+/*# sourceMappingURL=main.css.map */

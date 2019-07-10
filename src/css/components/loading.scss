@@ -1,0 +1,41 @@
+
+// main wrapper for loading component
+.loading-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+
+// loading text
+.loading{
+    font-size: 18pt;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+
+
+// wrapper that holds the question and fact
+.fact-wrapper{
+    width: 65%; 
+    color: #171717;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+// "did you know" text
+.did-you-know{
+    font-weight: bold;
+    font-size: 12pt;
+    color: #1e1e1e;
+}
+
+// fun fact
+.fact {
+    font-size: 12pt;
+    color: #1e1e1e;
+}

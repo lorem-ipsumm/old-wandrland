@@ -1,0 +1,47 @@
+.navbar-wrapper{
+    background-color: white;
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.icon-section{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    transition: all ease 0.2s;
+
+    span{
+        opacity: 0;
+        height: 0px;
+        transition: all ease 0.2s;
+        font-size: 7pt;
+    }
+
+    svg{
+        stroke: #1e1e1e;
+    }
+    
+    &.active{
+        transform: scale(1.1);
+        svg{
+            stroke: #EE4266;
+        }
+
+        span{
+            height: 5px;
+            opacity: 1;
+            color: #1e1e1e;
+        }
+    }
+}
