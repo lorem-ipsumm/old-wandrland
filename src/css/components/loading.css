@@ -13,6 +13,7 @@
       -ms-flex-align: center;
           align-items: center;
   position: relative;
+  height: 100%;
 }
 
 .loading {

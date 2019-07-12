@@ -34,7 +34,7 @@ export default class Navbar extends Component {
 
         // navigate to user
         if (target.classList.contains("user")) {
-            this.props.history.push("/user");
+            this.props.history.push("/user/me");
         }
 
         // get the other buttons

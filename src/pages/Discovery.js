@@ -40,12 +40,12 @@ export default class Discovery extends Component {
             if (this.state.tag_is_verified) {
                 // show the verified tag component
                 return (
-                    <VerifiedTag/>
+                    <VerifiedTag history={this.props.history} data={this.state.verification_data}/>
                 );
             } else {
                 // show the unverified tag component
                 return (
-                    <UnverifiedTag data={this.state.verification_data}/>
+                    <UnverifiedTag history={this.props.history} data={this.state.verification_data}/>
                 );
             }
         } else {
@@ -95,6 +95,7 @@ export default class Discovery extends Component {
                 // convert data to JSON
                 let json_data = JSON.parse(data);
 
+                console.log(json_data);
 
                 // add small delay to allow for reading fun fact!
                 setTimeout(() => {

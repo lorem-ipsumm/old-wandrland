@@ -8,13 +8,18 @@ import "../css/components/tag_verification.css"
 export default class VerifiedTag extends Component {
     render() {
         return(
-            <div className="tag_verification-wrapper">
+            <div className="tag_verification-wrapper wrapper">
                 <header>
-                    winner winner
+                    Nice Find!
                 </header>
-                <header>
-                    <span className="color">chikn dinnr</span>
-                </header>
+
+                <div className="discovery-info">
+                    <span>You Discovered: {this.props.data.tag_data.name}</span>
+                    <span className="discovery-reward color">+{this.props.data.tag_data.worth} Points!</span>
+                </div>
+                <div className="discovery-button-wrapper">
+                    <button onClick={() => this.props.history.push("/user/me")}>Okay</button>
+                </div>
             </div>
         );
     }

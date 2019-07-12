@@ -21,15 +21,13 @@ body {
 .app {
   width: 100vw;
   height: 100%;
+  background: #F4F4F4;
 }
 
 .wrapper {
   width: 100%;
   height: 100%;
   background: #F4F4F4;
-}
-
-.wrapper div {
   -webkit-animation: fade-in .5s;
           animation: fade-in .5s;
   -webkit-animation-timing-function: ease-in-out;
@@ -39,26 +37,26 @@ body {
 @-webkit-keyframes fade-in {
   from {
     opacity: 0;
-    -webkit-transform: scale(0.9);
-            transform: scale(0.9);
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
   }
   to {
     opacity: 1;
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
   }
 }
 
 @keyframes fade-in {
   from {
     opacity: 0;
-    -webkit-transform: scale(0.9);
-            transform: scale(0.9);
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
   }
   to {
     opacity: 1;
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
   }
 }
 /*# sourceMappingURL=main.css.map */
