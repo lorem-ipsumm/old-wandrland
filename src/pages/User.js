@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import cookie from "react-cookies";
 import "../css/pages/user.css";
 import Loading from "../components/Loading.js";
 
@@ -13,8 +12,10 @@ import Loading from "../components/Loading.js";
 
     If the user has not verified their account, their 
     stats will be saved, but their ID is stored in the
-    cookies, which is vulnerable to being erased
+    local storage, which is vulnerable to being erased
 */
+
+
 
 export default class User extends Component {
     constructor(props){
@@ -47,7 +48,7 @@ export default class User extends Component {
         // if the url ends with "me" then request data for user
         if (user_name === "me") {
             // set user name to saved user name
-            user_name = cookie.load("user_name"); 
+            user_name = localStorage.getItem("user_name"); 
 
             // set state username
             this.setState({user_name: user_name});

@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import "../css/pages/home.css";
 
+/*
+    This component will show the home page
+*/
+
+
 export default class Home extends Component {
     button_clicked = () => {
         console.log(this.props);
@@ -11,7 +16,7 @@ export default class Home extends Component {
         return(
             <div className="home-wrapper wrapper">
                 <input></input>
-                <button onClick={this.button_clicked}>go</button>
+                <button >go</button>
             </div>
         );
     }

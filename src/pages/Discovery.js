@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import cookie from "react-cookies";
 import '../css/pages/discovery.css';
 import VerifiedTag from "../components/VerifiedTag.js";
 import UnverifiedTag from "../components/UnverifiedTag.js";
 import Loading from "../components/Loading.js";
-
 /*
     This class is the page that the user sees when
     they discover a new tag.
@@ -12,6 +10,8 @@ import Loading from "../components/Loading.js";
         - If verified, the user is shown info about the tag
         - If not, the user is given a message saying what happened
 */
+
+
 
 export default class Discovery extends Component {
 
@@ -73,12 +73,12 @@ export default class Discovery extends Component {
         }
 
         // if the user has a user name add it to the url
-        if (cookie.load("user_name") !== undefined) {
+        if (localStorage.getItem("user_name") !== null) {
             // if there is a parameter before, a '&' is used
             if(tag.length > 1)
-                url = url + "&user_name=" + cookie.load("user_name");
+                url = url + "&user_name=" + localStorage.getItem("user_name");
             else
-                url = url + "?user_name=" + cookie.load("user_name");
+                url = url + "?user_name=" + localStorage.getItem("user_name");
         }
 
         // hit the verify endpoint
@@ -107,8 +107,9 @@ export default class Discovery extends Component {
                         verification_data: json_data
                     });
 
+
                     // save the user's user name
-                    cookie.save("user_name",json_data.user_name, {path: "/"});
+                    localStorage.setItem("user_name",json_data.user_name);
 
                 },2000);
 
