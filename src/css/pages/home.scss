@@ -1,3 +1,101 @@
-input{
-    font-size: 11pt;
+.home-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all ease 0.5s;
+}
+
+.top-players-wrapper{
+    transition: all ease 0.5s;
+    height: 0;
+    width: 100%;
+    overflow: none;
+    &.loaded{
+        height: 100%;
+    }
+}
+
+.separator{
+    background-color: #EE4266;
+    width: 80%;
+    height: 1px;
+}
+
+.user-data-wrapper{
+    margin-top: 20px;
+    background-color: white;
+    width: 90%;
+    min-height: 60px;
+    margin-bottom: 20px;
+    box-shadow: 0px 1px 4px rgba(146,146,146,.25); 
+    border-radius: 5px;
+    transition: all ease 0.5s;
+}
+
+.home-top-banner{
+    width: 100%;
+    height: auto; 
+    background-color: #EE4266;
+    color: white;
+    display: flex;
+    margin-bottom: 20px;
+    padding: 5px 10px;
+    span{
+        display: block;
+        font-size: 18pt;
+    }
+    .title-fun{
+        animation: color-transition 5s ease-in-out infinite;
+        animation-delay: 10s;
+    }
+}
+
+@keyframes color-transition {
+    0%{
+        color: white        
+    }
+
+    50% {
+        transform: scale(.9);
+    }
+
+
+    100% {
+        transform:  scale(1);
+    }
+}
+
+
+.player-wrapper{
+    background-color: white;
+    width: 90%;
+    min-height: 60px;
+    margin-bottom: 20px;
+    box-shadow: 0px 1px 4px rgba(146,146,146,.25); 
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 5px;
+    animation: fade-in 1s ease;    
+    animation-iteration-count: initial;
+    .user-name{
+        font-size: 13pt;
+    }
+    .score{
+        font-size: 10pt;
+        color: #545454;
+    }
+}
+
+@keyframes fade-in{
+    from{
+        opacity: 0;
+        transform: scale(.9);
+    }
+
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
 }

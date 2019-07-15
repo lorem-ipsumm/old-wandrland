@@ -93,7 +93,7 @@ export default class User extends Component {
         if (this.state.user_data_loaded) {
             return(
                 this.state.tags_list.map((tag,index) =>
-                    <div className="tag-wrapper">
+                    <div className="tag-wrapper" key={index}>
                         <div className="tag-name">
                             <span>{tag.name}</span>
                         </div>

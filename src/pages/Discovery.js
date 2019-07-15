@@ -111,7 +111,7 @@ export default class Discovery extends Component {
                     // save the user's user name
                     localStorage.setItem("user_name",json_data.user_name);
 
-                },2000);
+                },1500);
 
             });
         });
