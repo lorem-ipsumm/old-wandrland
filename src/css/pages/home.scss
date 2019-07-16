@@ -5,14 +5,30 @@
     transition: all ease 0.5s;
 }
 
+.player-data{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.data-wrapper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .top-players-wrapper{
     transition: all ease 0.5s;
-    height: 0;
     width: 100%;
-    overflow: none;
-    &.loaded{
-        height: 100%;
-    }
+    height: 100%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 60px;
 }
 
 .separator{
@@ -80,11 +96,83 @@
     animation: fade-in 1s ease;    
     animation-iteration-count: initial;
     .user-name{
-        font-size: 13pt;
+        font-size: 12pt;
     }
     .score{
         font-size: 10pt;
         color: #545454;
+    }
+}
+
+.rank-wrapper{
+    height: 60px;
+    width: 60px;
+    background-color: #EE4266;
+    color: white;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0px 5px 5px 0px;
+
+    .rank-label{
+        font-size: 11pt;
+        margin-bottom: 5px;
+    }
+
+    .rank-value {
+        font-size: 10pt;
+    }
+}
+
+.indiv-player-wrapper{
+    background-color: white;
+    width: 90%;
+    min-height: 60px;
+    margin-bottom: 20px;
+    box-shadow: 0px 1px 4px rgba(146,146,146,.25); 
+    display:flex;
+    justify-content: space-evenly;
+    padding-left: 10px;
+    flex-direction: column;
+    border-radius: 5px;
+    animation: fade-in 1s ease;    
+    animation-iteration-count: initial;
+    position: relative;
+    .user-name{
+        font-size: 11pt;
+    }
+    .score{
+        font-size: 9pt;
+        color: #545454;
+    }
+}
+
+.switch-wrapper{
+    width: 90%;
+    min-height: 50px;
+    margin-bottom: 20px;
+    display: flex;
+    border-radius: 5px;
+    overflow: hidden;
+    div{
+        border: none;
+        flex: 1;
+        display: flex;
+        align-items: center;
+        box-shadow: 0px 1px 4px rgba(146,146,146,.25); 
+        justify-content: center;
+        color: white;
+        font-size: 14pt;
+        background-color: #EE4266;
+        &.active{
+            color: white;
+            background-color: #C63E5A;
+        }
     }
 }
 
