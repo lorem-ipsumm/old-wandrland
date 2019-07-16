@@ -3,9 +3,7 @@
     flex-direction: column;
     align-items: center;
     transition: all ease 0.5s;
-    padding-top: 20px;
     overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
 }
 
 .player-data{
@@ -13,27 +11,25 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
 }
 
 .data-wrapper{
     width: 100%;
-    height: auto;
+    height: 100%;
     background: #F4F4F4;
-    display: flex;
+    //display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+    padding: 20px 0px;
 }
 
 .top-players-wrapper{
     transition: all ease 0.5s;
     width: 100%;
-    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    //margin-bottom: 80px;
-    padding-bottom: 60px;
 }
 
 .separator{
@@ -42,9 +38,6 @@
     height: 1px;
 }
 
-.data-wrapper{
-    height: 100%;
-}
 
 .user-data-wrapper{
     margin-top: 20px;
@@ -133,7 +126,7 @@
     flex-direction: column;
     border-radius: 5px;
     animation: fade-in 1s ease;    
-    animation-iteration-coupaddingnt: initial;
+    animation-iteration-count: initial;
     position: relative;
     .user-name{
         font-size: 11pt;
@@ -156,10 +149,9 @@
 .switch-wrapper{
     width: 100%;
     min-height: 40px;
-    margin-bottom: 20px;
-    margin-top: 20px;
     display: flex;
     box-shadow: 0px 1px 4px rgba(146,146,146,.25); 
+    margin-bottom: 20px;
     div{
         border: none;
         padding-left: 10px;
