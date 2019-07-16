@@ -1,0 +1,30 @@
+.faq-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 20px;
+}
+
+.question-wrapper {
+  width: 90%;
+  margin-bottom: 30px;
+}
+
+.question {
+  color: #EE4266;
+  font-weight: bold;
+  font-size: 15pt;
+  margin-bottom: 5px;
+}
+
+.answer {
+  color: #4E4E4E;
+}
+/*# sourceMappingURL=faq.css.map */

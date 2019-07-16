@@ -1,0 +1,23 @@
+.faq-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.question-wrapper{
+    width: 90%;
+    margin-bottom: 30px;
+}
+
+
+.question{
+    color: #EE4266;
+    font-weight: bold;
+    font-size: 15pt;
+    margin-bottom: 5px;
+}
+
+.answer{
+    color: #4E4E4E;
+}
