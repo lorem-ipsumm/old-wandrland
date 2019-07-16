@@ -88,7 +88,7 @@ export default class Home extends Component {
         let user_name = localStorage.getItem("user_name");
 
         // create url for top players 
-        let top_players_url = "https://us-central1-explor-fecbc.cloudfunctions.net/get_top_players";
+        let top_players_url = "https://us-central1-explor-fecbc.cloudfunctions.net/get_top_players?limit=5";
 
         // create url for user data
         let user_data_url = "https://us-central1-explor-fecbc.cloudfunctions.net/get_user_data?user_name=" + user_name;
@@ -135,7 +135,7 @@ export default class Home extends Component {
                     </div>
                     <div className="top-players-wrapper">
                     {this.state.top_players.map((player,index) => 
-                        <div className="player-wrapper" key={index}>
+                        <div className="player-wrapper individual" key={index}>
                             {index <= 2 ?
                             <div className="award">
                                 <span className="user-name">{this.state.top_players[index].user_name}</span>
@@ -163,9 +163,9 @@ export default class Home extends Component {
     render() {
         return(
             <div className="home-wrapper wrapper">
-               <div className="home-top-banner">
+               {/*<div className="home-top-banner">
                     <span className="title">explor.</span><span className="title-fun">fun</span>
-               </div>
+        </div>*/}
                 {this.show_data()} 
             </div>
         );

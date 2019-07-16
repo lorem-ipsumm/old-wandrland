@@ -3,6 +3,7 @@
     flex-direction: column;
     align-items: center;
     transition: all ease 0.5s;
+    padding-top: 20px;
 }
 
 .player-data{
@@ -29,6 +30,7 @@
     flex-direction: column;
     align-items: center;
     margin-bottom: 60px;
+    justify-content: space-between;
 }
 
 .separator{
