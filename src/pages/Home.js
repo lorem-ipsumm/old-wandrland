@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import "../css/pages/home.css";
 import Loading from "../components/Loading.js";
+import { Award } from "react-feather";
 
 /*
     This component will show the home page
@@ -118,7 +119,7 @@ export default class Home extends Component {
             return(
                 <div className="data-wrapper">
                     <div className="player-data">
-                        <div className="indiv-player-wrapper">
+                        <div className="player-wrapper">
                             <span className="user-name">{this.state.user_data.user_name} <span className="color">(you)</span></span>
                             <span className="score">{this.state.user_data.score} Points</span>
                             <div className="rank-wrapper">
@@ -135,8 +136,11 @@ export default class Home extends Component {
                     <div className="top-players-wrapper">
                     {this.state.top_players.map((player,index) => 
                         <div className="player-wrapper" key={index}>
-                            {index === 0 ?
-                            <span className="user-name top">{this.state.top_players[index].user_name}</span>
+                            {index <= 2 ?
+                            <div className="award">
+                                <span className="user-name">{this.state.top_players[index].user_name}</span>
+                                <Award/>
+                            </div>
                             : 
                             <span className="user-name">{this.state.top_players[index].user_name}</span>
                             }
