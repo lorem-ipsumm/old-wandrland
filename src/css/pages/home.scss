@@ -5,6 +5,7 @@
     transition: all ease 0.5s;
     padding-top: 20px;
     overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
 }
 
 .player-data{
