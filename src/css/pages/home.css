@@ -12,6 +12,7 @@
   -webkit-transition: all ease 0.5s;
   transition: all ease 0.5s;
   overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 .player-data {
@@ -28,7 +29,7 @@
 }
 
 .separator {
-  min-height: 20px;
+  min-height: 10px;
   width: 100%;
 }
 
