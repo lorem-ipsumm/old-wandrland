@@ -119,7 +119,7 @@ export default class Home extends Component {
             return(
                 <div className="data-wrapper">
                     <div className="player-data">
-                        <div className="player-wrapper">
+                        <div className="player-wrapper individual">
                             <span className="user-name">{this.state.user_data.user_name} <span className="color">(you)</span></span>
                             <span className="score">{this.state.user_data.score} Points</span>
                             <div className="rank-wrapper">
@@ -135,7 +135,7 @@ export default class Home extends Component {
                     </div>
                     <div className="top-players-wrapper">
                     {this.state.top_players.map((player,index) => 
-                        <div className="player-wrapper individual" key={index}>
+                        <div className="player-wrapper" key={index}>
                             {index <= 2 ?
                             <div className="award">
                                 <span className="user-name">{this.state.top_players[index].user_name}</span>
