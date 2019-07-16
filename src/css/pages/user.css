@@ -6,7 +6,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  overflow-y: hidden;
+  overflow-y: scroll;
 }
 
 .user-info-top {
@@ -85,6 +85,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: auto;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -92,9 +93,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  overflow-y: scroll;
   padding-top: 20px;
-  padding-bottom: 20px;
 }
 
 .user-info-stats {

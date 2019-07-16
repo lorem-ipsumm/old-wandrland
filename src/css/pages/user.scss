@@ -2,7 +2,7 @@
 .user-wrapper{
     display: flex;
     flex-direction: column;
-    overflow-y: hidden;
+    overflow-y: scroll;
 }
 
 .user-info-top{
@@ -50,11 +50,10 @@
 .user-info-bottom{
     flex: 1;
     display: flex;
+    height: auto;
     flex-direction: column;
     align-items: center;
-    overflow-y: scroll;
     padding-top: 20px;
-    padding-bottom: 20px;
 }
 
 .user-info-stats{
