@@ -128,6 +128,7 @@ export default class Home extends Component {
                             </div>
                         </div>
                     </div>
+                    <div className="separator"></div>
                     <div className="switch-wrapper">
                         <div className="top-players-button">
                             <span>Top 10 Players</span>
@@ -147,6 +148,7 @@ export default class Home extends Component {
                             <span className="score">{this.state.top_players[index].score} Points</span>
                         </div>
                     )}
+                    <div className="separator"></div>
                     </div>
                 </div>
             );    

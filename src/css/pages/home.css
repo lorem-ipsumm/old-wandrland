@@ -27,6 +27,11 @@
           align-items: center;
 }
 
+.separator {
+  min-height: 20px;
+  width: 100%;
+}
+
 .data-wrapper {
   width: 100%;
   height: 100%;
@@ -58,12 +63,6 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.separator {
-  background-color: #EE4266;
-  width: 80%;
-  height: 1px;
 }
 
 .user-data-wrapper {
