@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import "../css/components/tag_verification.css"
-import { Link } from 'react-router-dom';
+
+
 /*
     This component appears when a discovered tag has been verified
 */
@@ -30,7 +31,9 @@ export default class UnverifiedTag extends Component {
                     <span className="color">Uh Oh!</span>
                 </header>
                 {this.display_error()}
-                <Link to="/">Go Back</Link>
+                <div className="discovery-button-wrapper">
+                    <button onClick={() => this.props.history.push("/user/me")}>Okay</button>
+                </div>
             </div>
         );
     }

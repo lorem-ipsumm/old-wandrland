@@ -88,7 +88,7 @@ export default class Home extends Component {
         let user_name = localStorage.getItem("user_name");
 
         // create url for top players 
-        let top_players_url = "https://us-central1-explor-fecbc.cloudfunctions.net/get_top_players?limit=5";
+        let top_players_url = "https://us-central1-explor-fecbc.cloudfunctions.net/get_top_players?limit=10";
 
         // create url for user data
         let user_data_url = "https://us-central1-explor-fecbc.cloudfunctions.net/get_user_data?user_name=" + user_name;

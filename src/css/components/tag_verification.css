@@ -86,13 +86,12 @@ header {
           justify-content: center;
   text-align: center;
   width: 70%;
-  margin: 5px 0px;
+  margin-top: 5px;
 }
 
 .info-text span {
   width: 100%;
   color: #1e1e1e;
-  margin-bottom: 10px;
 }
 
 a {
