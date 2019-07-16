@@ -14,9 +14,13 @@
     align-items: center;
 }
 
-.separator{
-    min-height: 10px;
+.top-separator{
+    //min-height: 5px;
     width: 100%;
+}
+
+.bottom-separator{
+    //min-height: 
 }
 
 .data-wrapper{
@@ -32,7 +36,8 @@
 
 .top-players-wrapper{
     transition: all ease 0.5s;
-    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -118,7 +123,7 @@
     background-color: white;
     width: 90%;
     min-height: 60px;
-    margin-bottom: 20px;
+    margin-bottom: 20px !important;
     box-shadow: 0px 1px 4px rgba(146,146,146,.25); 
     display:flex;
     justify-content: space-evenly;
