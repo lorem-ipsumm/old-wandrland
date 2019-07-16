@@ -148,7 +148,7 @@ export default class Home extends Component {
                             <span className="score">{this.state.top_players[index].score} Points</span>
                         </div>
                     )}
-                    <div className="bottom-separator"></div>
+                    <div className="spacer"></div>
                     </div>
                 </div>
             );    
