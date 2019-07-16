@@ -12,6 +12,7 @@ body{
     width: 100vw;
     height: calc(100vh - 60px);
     margin: 0;
+    -webkit-overflow-scrolling: touch;
 }
 
 // root pane

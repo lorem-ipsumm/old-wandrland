@@ -4,6 +4,7 @@
     align-items: center;
     transition: all ease 0.5s;
     overflow-x: hidden;
+    padding-top: 20px;
 }
 
 .player-data{
@@ -112,9 +113,6 @@
     }
 }
 
-.individual{
-    margin: 30px 0px !important;
-}
 
 .player-wrapper{
     background-color: white;
