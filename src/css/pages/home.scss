@@ -5,7 +5,6 @@
     transition: all ease 0.5s;
     padding-top: 20px;
     overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
 }
 
 .player-data{
@@ -13,11 +12,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    top: 0;
-    background: #F4F4F4;
-    padding-top: 20px;
-    z-index: 1;
 }
 
 .data-wrapper{
@@ -30,7 +24,6 @@
 }
 
 .top-players-wrapper{
-    margin-top: 130px;
     transition: all ease 0.5s;
     width: 100%;
     height: auto;
@@ -159,10 +152,8 @@
 .switch-wrapper{
     width: 100%;
     min-height: 40px;
+    margin-bottom: 20px;
     display: flex;
-    position: absolute;
-    top: 95px;
-    z-index: 1;
     box-shadow: 0px 1px 4px rgba(146,146,146,.25); 
     div{
         border: none;

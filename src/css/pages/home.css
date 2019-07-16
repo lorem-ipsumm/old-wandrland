@@ -13,7 +13,6 @@
   transition: all ease 0.5s;
   padding-top: 20px;
   overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
 }
 
 .player-data {
@@ -27,11 +26,6 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  position: absolute;
-  top: 0;
-  background: #F4F4F4;
-  padding-top: 20px;
-  z-index: 1;
 }
 
 .data-wrapper {
@@ -51,7 +45,6 @@
 }
 
 .top-players-wrapper {
-  margin-top: 130px;
   -webkit-transition: all ease 0.5s;
   transition: all ease 0.5s;
   width: 100%;
@@ -227,12 +220,10 @@
 .switch-wrapper {
   width: 100%;
   min-height: 40px;
+  margin-bottom: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  position: absolute;
-  top: 95px;
-  z-index: 1;
   -webkit-box-shadow: 0px 1px 4px rgba(146, 146, 146, 0.25);
           box-shadow: 0px 1px 4px rgba(146, 146, 146, 0.25);
 }
