@@ -59,13 +59,19 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 60px;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 10px;
 }
 
 .separator {
   background-color: #EE4266;
   width: 80%;
   height: 1px;
+}
+
+.data-wrapper {
+  height: 100%;
 }
 
 .user-data-wrapper {
