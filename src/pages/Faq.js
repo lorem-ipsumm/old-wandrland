@@ -25,7 +25,9 @@ export default class Faq extends Component {
                         <span>Do I need to sign up?</span>
                     </div>
                     <div className="answer">
-                        <span>Signing up is not required, but if you change browsers or devices, your score will be lost, so choose wisely. Your phone number will be used to verify your account. This info will not be shared with anyone, and is only used to tie your data to you.</span>
+                        <span>Signing up is <b>not required</b>, but if you change browsers or devices, your score will be lost, so choose wisely. Your phone number will be used to verify your account. <b>This info will not be shared with anyone</b>, and is only used to tie your data to you.</span>
+                        <span>If you'd like to recover your account, or verifiy your account, tap the button below</span>
+                        <button onClick={() => this.props.history.push("/verify")}>Verify/Login</button>
                     </div>
                 </div>
                 <div className="question-wrapper">

@@ -114,6 +114,12 @@
   margin-top: 15px;
 }
 
+.warning-wrapper {
+  font-size: 10pt;
+  padding: 10px 10px;
+  background-color: #FCFF56;
+}
+
 .user-info-name {
   font-size: 15pt;
 }

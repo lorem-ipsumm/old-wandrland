@@ -35,7 +35,11 @@ export default class User extends Component {
             // state value for user tags
             tags: -1,
             // list of tags discovered
-            tags_list: []
+            tags_list: [],
+            // additional points for rarity
+            rarity: 0,
+            // state value for checking user verification
+            verified: false
         }
     }
 
@@ -79,7 +83,8 @@ export default class User extends Component {
                             score: json_data.score,
                             tags: json_data.tags,
                             user_data_loaded: true,
-                            tags_list: json_data.tags_list
+                            tags_list: json_data.tags_list,
+                            //rarity: json_data.tag_data.obtained/json_data.discovery_count
                         });
                     },1500);
                 }
@@ -108,6 +113,23 @@ export default class User extends Component {
                 <Loading/>
             );
         }
+    }
+
+    // take use
+    warning_clicked = () => {
+
+    }
+
+
+    // show the user the account verification warning
+    show_warning = () => {
+        // check to see if the user is verified
+        if (this.state.user_data_loaded && !this.state.verified)
+        return(
+            <div className="warning-wrapper" onClick={() => this.props.history.push("/faq")}>
+                <span>Your account is not verified! <b>This is completely optional</b>, but if you switch browsers/devices or use a browser that clears data when it closes <b>you may lose your account</b>. Tap to learn more</span>
+            </div>
+        )
     }
 
     // toggle the visibility of the data when loaded
@@ -144,6 +166,7 @@ export default class User extends Component {
                        </div> 
                     </div> 
                 </div>
+                {this.show_warning()}
                 <div className="user-info-middle">
                     <span>Tags Discovered</span>
                 </div>

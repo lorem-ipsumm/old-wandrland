@@ -24,4 +24,18 @@
 
 .answer{
     color: #4E4E4E;
+    span{
+        display: block;
+    }
+    button{
+        margin-top: 10px;
+        width: 120px;
+        box-shadow: 0px 1px 4px rgba(146,146,146,.25); 
+        height: 30px;
+        border-radius: 2px;
+        border: none;
+        background-color: #EE4266;
+        color: white;
+    }
 }
+
