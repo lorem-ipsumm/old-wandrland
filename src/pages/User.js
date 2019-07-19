@@ -39,13 +39,12 @@ export default class User extends Component {
             // additional points for rarity
             rarity: 0,
             // state value for checking user verification
-            verified: false
+            is_verified: false
         }
     }
 
     // request data from the backend when the component mounts
     componentDidMount = () => {
-
         // get username
         let user_name = window.location.pathname.substr(window.location.pathname.lastIndexOf("/")+1);
 
@@ -84,6 +83,7 @@ export default class User extends Component {
                             tags: json_data.tags,
                             user_data_loaded: true,
                             tags_list: json_data.tags_list,
+                            is_verified: json_data.is_verified
                             //rarity: json_data.tag_data.obtained/json_data.discovery_count
                         });
                     },1500);
@@ -115,19 +115,25 @@ export default class User extends Component {
         }
     }
 
-    // take use
-    warning_clicked = () => {
-
+    // listen for warning button clicks and redirect the user
+    warning_button_clicked= (redirect) => {
+        // the user has seen the warning so do not show it anymore
+        window.localStorage.setItem("warning_seen","");
     }
 
 
     // show the user the account verification warning
     show_warning = () => {
         // check to see if the user is verified
-        if (this.state.user_data_loaded && !this.state.verified)
+        // if user is not verified show the warning
+        if (this.state.user_data_loaded && (!this.state.is_verified && window.localStorage.getItem("warning_seen") === null))
         return(
-            <div className="warning-wrapper" onClick={() => this.props.history.push("/faq")}>
-                <span>Your account is not verified! <b>This is completely optional</b>, but if you switch browsers/devices or use a browser that clears data when it closes <b>you may lose your account</b>. Tap to learn more</span>
+            <div className="warning-wrapper">
+                <span>Your account is not verified! <b>This is completely optional</b>, but if you switch browsers/devices or use a browser that clears data when it closes, <b>you may lose your account</b>. Select an option to hide this warning.</span>
+                <div className="warning-buttons" onClick={this.warning_button_clicked}>
+                    <button onClick={() => this.props.history.push("/faq")}>Go to FAQ</button>
+                    <button onClick={() => this.props.history.push("/verify")}>Verify Account</button>
+                </div>
             </div>
         )
     }
@@ -136,7 +142,6 @@ export default class User extends Component {
     componentDidUpdate = () => {
         // wait for the data to be loaded 
         if (this.state.user_data_loaded) {
-            console.log(this.state);
             // get the stats container
             let stats = document.getElementsByClassName("user-info-stats")[0];
 
