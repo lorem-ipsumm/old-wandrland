@@ -72,13 +72,16 @@
 
 
 .warning-wrapper{
-    position: absolute;
+    position: fixed;
     left: 0;
     bottom: 60px;
     font-size: 10.5pt;
     background-color: #DF384C;
     box-shadow: 0px -1px 4px rgba(30,30,30,.25); 
     //background-color: #EE4266;
+    b{
+        text-decoration: underline;
+    }
     span{
         display: block;
         color: #FEF0F0;

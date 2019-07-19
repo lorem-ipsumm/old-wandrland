@@ -99,8 +99,8 @@
 }
 
 .loading-message {
-  position: absolute;
-  bottom: 15px;
+  position: fixed;
+  bottom: 70px;
   text-align: center;
   opacity: 0;
   width: 90%;

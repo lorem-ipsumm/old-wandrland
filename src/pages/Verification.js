@@ -23,7 +23,7 @@ export default class Verification extends Component {
             callbacks: {
                 signInSuccessWithAuthResult: (e) => {
                     // store uid in local storage
-                    localStorage.setItem("uiud",e.user.uid);
+                    localStorage.setItem("uid",e.user.uid);
                     // send uid provided by google to the backend
                     this.send_verification(e.user.uid);
                 }
@@ -73,7 +73,7 @@ export default class Verification extends Component {
 
                 if (json_data.success) {
                     // redirect to user page
-                    this.props.history.push("/user");
+                    this.props.history.push("/user/me");
                 } else {
                     // TODO: display authentication failure message
                     this.props.history.push("/verify");

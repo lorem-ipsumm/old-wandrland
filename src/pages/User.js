@@ -53,6 +53,8 @@ export default class User extends Component {
             // set user name to saved user name
             user_name = localStorage.getItem("user_name"); 
 
+            console.log(user_name);
+
             // set state username
             this.setState({user_name: user_name});
         }
@@ -86,7 +88,7 @@ export default class User extends Component {
                             is_verified: json_data.is_verified
                             //rarity: json_data.tag_data.obtained/json_data.discovery_count
                         });
-                    },500);
+                    },1500);
                 }
             });
         });
@@ -129,9 +131,9 @@ export default class User extends Component {
         if (this.state.user_data_loaded && (!this.state.is_verified && window.localStorage.getItem("warning_seen") === null))
         return(
             <div className="warning-wrapper">
-                <span>Your account is not verified! <b>This is completely optional</b>, but if you switch browsers/devices or use a browser that clears data when it closes, <b>you may lose your account</b>. Select an option to hide this warning.</span>
+                <span>Your account is not verified! <b>This is completely optional</b>, but if you switch browsers/devices or use a browser that clears its data, <b>you may lose your account</b>. Select an option to hide this warning.</span>
                 <div className="warning-buttons" onClick={this.warning_button_clicked}>
-                    <button onClick={() => this.props.history.push("/faq")}>Go to FAQ</button>
+                    <button onClick={() => this.props.history.push("/faq")}>Learn More</button>
                     <button onClick={() => this.props.history.push("/verify")}>Verify Account</button>
                 </div>
             </div>

@@ -45,7 +45,7 @@ export default class Home extends Component {
                         user_data_loaded: true,
                         user_data: data
                     });
-                }, 500)
+                }, 1500)
             }
         });
 

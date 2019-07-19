@@ -25,9 +25,10 @@ export default class Faq extends Component {
                         <span>Do I need to sign up?</span>
                     </div>
                     <div className="answer">
-                        <span>Signing up is <b>not required</b>, but if you change browsers or devices, your score will be lost, so choose wisely. Your phone number will be used to verify your account. <b>This info will not be shared with anyone</b>, and is only used to tie your data to you.</span>
-                        <span>If you'd like to recover your account, or verifiy your account, tap the button below</span>
-                        <button onClick={() => this.props.history.push("/verify")}>Verify/Login</button>
+                        <span className="text">Signing up is <b>not required</b>, but if you change browsers/devices or use a browser that clears its data*, you will be given a new account, so choose wisely. Your phone number will be used as your login and a text message is sent to verify who you are. <b>This info will not be shared with anyone</b>, and is only used to tie your data to you.</span>
+                        <span className="text">To restore a verified account tap the login button and you will be asked to verify your phone number again.</span>
+                        <button onClick={() => this.props.history.push("/verify")}>Sign-Up/Login</button>
+                        <span className="footnote">*This includes, but is not limited to Firefox Focus, Ghostery, Red Onion, Secret Browser, etc. Playing in incognito mode will have the same effect.</span>
                     </div>
                 </div>
                 <div className="question-wrapper">

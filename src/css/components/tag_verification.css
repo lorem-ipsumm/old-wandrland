@@ -66,6 +66,8 @@ header {
   border-radius: 2px;
   font-size: 13pt;
   border: none;
+  -webkit-box-shadow: 0px 1px 4px rgba(146, 146, 146, 0.9);
+          box-shadow: 0px 1px 4px rgba(146, 146, 146, 0.9);
   background-color: #EE4266;
   color: white;
 }

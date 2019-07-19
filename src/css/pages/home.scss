@@ -15,7 +15,7 @@
 }
 
 .spacer{
-    min-height: 60px; 
+    min-height: 70px; 
     width: 100%;
 }
 .data-wrapper{
@@ -125,7 +125,7 @@
     padding-left: 10px;
     flex-direction: column;
     border-radius: 5px;
-    animation: fade-in 1s ease;    
+    animation: fade-in-2 1s ease;    
     animation-iteration-count: initial;
     position: relative;
     .user-name{
@@ -177,5 +177,15 @@
     to{
         opacity: 1;
         transform: scale(1);
+    }
+}
+
+@keyframes fade-in-2{
+    from{
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
     }
 }

@@ -115,13 +115,17 @@
 }
 
 .warning-wrapper {
-  position: absolute;
+  position: fixed;
   left: 0;
   bottom: 60px;
   font-size: 10.5pt;
   background-color: #DF384C;
   -webkit-box-shadow: 0px -1px 4px rgba(30, 30, 30, 0.25);
           box-shadow: 0px -1px 4px rgba(30, 30, 30, 0.25);
+}
+
+.warning-wrapper b {
+  text-decoration: underline;
 }
 
 .warning-wrapper span {
