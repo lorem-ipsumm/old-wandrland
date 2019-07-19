@@ -45,7 +45,7 @@ export default class Home extends Component {
                         user_data_loaded: true,
                         user_data: data
                     });
-                }, 1500)
+                }, 500)
             }
         });
 
@@ -165,9 +165,6 @@ export default class Home extends Component {
     render() {
         return(
             <div className="home-wrapper wrapper">
-               {/*<div className="home-top-banner">
-                    <span className="title">explor.</span><span className="title-fun">fun</span>
-        </div>*/}
                 {this.show_data()} 
             </div>
         );

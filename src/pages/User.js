@@ -86,7 +86,7 @@ export default class User extends Component {
                             is_verified: json_data.is_verified
                             //rarity: json_data.tag_data.obtained/json_data.discovery_count
                         });
-                    },1500);
+                    },500);
                 }
             });
         });

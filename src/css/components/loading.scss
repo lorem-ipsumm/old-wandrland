@@ -75,3 +75,23 @@
     font-size: 12pt;
     color: #1e1e1e;
 }
+
+.loading-message{
+    position: absolute;
+    bottom: 15px;
+    text-align: center;
+    opacity: 0;
+    width: 90%;
+    transition: all ease 0.5s;
+    transform: translateY(5px);
+    span{
+        text-align: center;
+        font-size: 10pt;
+        color: #565556;
+    }
+
+    &.visible{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}

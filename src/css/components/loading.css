@@ -97,4 +97,28 @@
   font-size: 12pt;
   color: #1e1e1e;
 }
+
+.loading-message {
+  position: absolute;
+  bottom: 15px;
+  text-align: center;
+  opacity: 0;
+  width: 90%;
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+  -webkit-transform: translateY(5px);
+          transform: translateY(5px);
+}
+
+.loading-message span {
+  text-align: center;
+  font-size: 10pt;
+  color: #565556;
+}
+
+.loading-message.visible {
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+  opacity: 1;
+}
 /*# sourceMappingURL=loading.css.map */

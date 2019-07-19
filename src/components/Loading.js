@@ -17,6 +17,19 @@ export default class Loading extends Component {
         ];
     }
 
+    // wait five seconds before showing bad connection message
+    componentDidMount = () => {
+        setTimeout(() => {
+            // show bad connection message
+            let message = document.getElementsByClassName("loading-message")[0];
+
+            // check to see if the element exists
+            if(message !== undefined){
+                document.getElementsByClassName("loading-message")[0].classList.add("visible");
+            }
+        },5000);
+    }
+
     render() {
         return(
             <div className="loading-wrapper wrapper">
@@ -24,6 +37,9 @@ export default class Loading extends Component {
                 <div className="fact-wrapper">
                     <span className="did-you-know"><span className="color">Did You Know:</span> </span>
                     <span className="fact">{this.facts[Math.floor(Math.random()*3)]}</span>
+                </div>
+                <div className="loading-message">
+                    <span>It looks like your connection is weak. Please be patient. If this cotinues try refreshing the page.</span>
                 </div>
             </div>
         );
