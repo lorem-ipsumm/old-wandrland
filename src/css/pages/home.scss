@@ -7,12 +7,6 @@
     -webkit-overflow-scrolling: touch;
 }
 
-.player-data{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 .spacer{
     min-height: 70px; 
@@ -26,7 +20,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 0px;
+    padding-bottom: 20px;
 }
 
 .top-players-wrapper{
@@ -89,12 +83,12 @@
 
 
 .rank-wrapper{
-    height: 60px;
-    width: 60px;
-    background-color: #EE4266;
+    height: 100%;
+    width: auto;
+    //background-color: #EE4266;
     color: white;
     position: absolute;
-    right: 0;
+    right: 25px;
     top: 0;
     display: flex;
     flex-direction: column;
@@ -104,12 +98,34 @@
     border-radius: 0px 5px 5px 0px;
 
     .rank-label{
-        font-size: 11pt;
+        font-size: 9pt;
         margin-bottom: 5px;
+        color: #EE4266;
     }
 
     .rank-value {
-        font-size: 10pt;
+        font-size: 11pt;
+        color: #EE4266;
+    }
+}
+
+.individual-player-wrapper{
+    position: relative;
+    background-color: white;
+    width: 100%;
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 30px;
+    animation: fade-in-2 1s ease;    
+    animation-iteration-count: initial;
+    .score{
+        font-size: 9pt;
+        color: #545454;
+    }
+    .user-name{
+        font-size: 11pt;
     }
 }
 

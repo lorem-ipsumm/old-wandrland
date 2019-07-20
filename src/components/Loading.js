@@ -23,10 +23,11 @@ export default class Loading extends Component {
             "y̫͍̭o̫̭̩̟͞u͓̞͜ͅ'̞͖re̼ ͚̞͔̹͖͢p͔̝̫̪̭̺͓͢r҉̻͈ͅo͠b̺̠a̷̝̻͈͔b̬͖̖ļ̱̗̗y͜ h͏̭̳̤ͅu͖̱̻̟͚m̘̙͍a̼n͉̥",
         ];
 
-        // timer for 
+        // timer for showing connection time
         this.connection_timer = undefined;
 
         this.state = {
+            // the current fact being shown
             current_fact: ""
         }
     }

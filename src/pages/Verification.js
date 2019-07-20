@@ -42,7 +42,6 @@ export default class Verification extends Component {
     }
 
 
-
     // send the verification id (uid) to the backend
     send_verification = (uid) => {
         
@@ -72,6 +71,8 @@ export default class Verification extends Component {
                 });
 
                 if (json_data.success) {
+                    window.localStorage.setItem("user_name", json_data.user_name);
+
                     // redirect to user page
                     this.props.history.push("/user/me");
                 } else {

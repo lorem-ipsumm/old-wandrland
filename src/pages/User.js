@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import "../css/pages/user.css";
 import Loading from "../components/Loading.js";
+import Account from '../components/Account';
 
 /*
     This class shows the user's stats. This includes
@@ -48,12 +49,15 @@ export default class User extends Component {
         // get username
         let user_name = window.location.pathname.substr(window.location.pathname.lastIndexOf("/")+1);
 
+        // do not send any requests if the user doesn't have an account
+        if (window.localStorage.getItem("user_name") === null){
+            return;
+        }
+
         // if the url ends with "me" then request data for user
         if (user_name === "me") {
             // set user name to saved user name
             user_name = localStorage.getItem("user_name"); 
-
-            console.log(user_name);
 
             // set state username
             this.setState({user_name: user_name});
@@ -153,34 +157,47 @@ export default class User extends Component {
     }
 
 
+    show_data = () => {
+        
+    }
+
+
     render() {
-        return(
-            <div className="user-wrapper wrapper">
-                <div className="user-info-top">
-                    <span className="user-info-name">{this.state.user_name}</span>
-                    <div className="user-info-stats">
-                       <div className="user-stat">
-                            <span className="label">Rank</span>
-                            <span className="value">{this.state.rank}</span>
-                       </div> 
-                       <div className="user-stat">
-                            <span className="label">Points</span>
-                            <span className="value">{this.state.score}</span>
-                       </div> 
-                       <div className="user-stat">
-                            <span className="label">Tags</span>
-                            <span className="value">{this.state.tags}</span>
-                       </div> 
-                    </div> 
+        // check to see if the user has an account
+        if (window.localStorage.getItem("user_name") !== null){
+            return(
+                <div className="user-wrapper wrapper">
+                    <div className="user-info-top">
+                        <span className="user-info-name">{this.state.user_name}</span>
+                        <div className="user-info-stats">
+                        <div className="user-stat">
+                                <span className="label">Rank</span>
+                                <span className="value">{this.state.rank}</span>
+                        </div> 
+                        <div className="user-stat">
+                                <span className="label">Points</span>
+                                <span className="value">{this.state.score}</span>
+                        </div> 
+                        <div className="user-stat">
+                                <span className="label">Tags</span>
+                                <span className="value">{this.state.tags}</span>
+                        </div> 
+                        </div> 
+                    </div>
+                    {this.show_warning()}
+                    <div className="user-info-middle">
+                        <span>Tags Discovered</span>
+                    </div>
+                    <div className="user-info-bottom">
+                        {this.show_tags()}
+                    </div>
                 </div>
-                {this.show_warning()}
-                <div className="user-info-middle">
-                    <span>Tags Discovered</span>
-                </div>
-                <div className="user-info-bottom">
-                    {this.show_tags()}
-                </div>
-            </div>
-        );
+            );
+        } else {
+            // show account page if user does not have an account
+            return(
+                <Account history={this.props.history}/>
+            );
+        }
     }
 }

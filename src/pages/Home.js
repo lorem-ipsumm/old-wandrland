@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import "../css/pages/home.css";
 import Loading from "../components/Loading.js";
+import Account from "../components/Account.js";
 import { Award } from "react-feather";
 
 /*
@@ -14,9 +15,13 @@ export default class Home extends Component {
         super(props);
 
         this.state = {
+            // have the top players been loaded
             top_players_loaded: false,
+            // has the user's data been loaded
             user_data_loaded: false,
+            // received user data
             user_data: [],
+            // top player data
             top_players: []
         }
     }
@@ -87,6 +92,11 @@ export default class Home extends Component {
 
         let user_name = localStorage.getItem("user_name");
 
+        // do not send any requests if the user doesn't have an account
+        if (window.localStorage.getItem("user_name") === null){
+            return;
+        }
+
         // create url for top players 
         let top_players_url = "https://us-central1-explor-fecbc.cloudfunctions.net/get_top_players?limit=10";
 
@@ -115,20 +125,23 @@ export default class Home extends Component {
 
 
     show_data = () => {
-        if (this.state.user_data_loaded && this.state.top_players_loaded) {
+        // check to see if the user has an account
+        if (window.localStorage.getItem("user_name") === null) {
+            // if the user doesn't have an account show the account info page
+            return(
+                <Account history={this.props.history}/>
+            );
+        }else if (this.state.user_data_loaded && this.state.top_players_loaded) {
             return(
                 <div className="data-wrapper">
-                    <div className="player-data">
-                        <div className="player-wrapper individual">
-                            <span className="user-name">{this.state.user_data.user_name} <span className="color">(you)</span></span>
-                            <span className="score">{this.state.user_data.score} Points</span>
-                            <div className="rank-wrapper">
-                                <span className="rank-label">Rank</span>
-                                <span className="rank-value">{this.state.user_data.rank}</span>
-                            </div>
+                    <div className="individual-player-wrapper">
+                        <span className="user-name">{this.state.user_data.user_name} <span className="color">(you)</span></span>
+                        <span className="score">{this.state.user_data.score} Points</span>
+                        <div className="rank-wrapper">
+                            <span className="rank-label">Rank</span>
+                            <span className="rank-value">{this.state.user_data.rank}</span>
                         </div>
                     </div>
-                    <div className="top-separator"></div>
                     <div className="switch-wrapper">
                         <div className="top-players-button">
                             <span>Top 10 Players</span>

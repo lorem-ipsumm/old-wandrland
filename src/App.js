@@ -20,12 +20,33 @@ export default class App extends Component{
   constructor(props){
     super(props);
 
+    // list of pages that require accounts
+    this.account_required = ["/","/verify","/discovery","/user/me"];
 
     // listen for page changes
     history.listen((event) => {
       // pass the pathname
       this.update_active(event.pathname);
+
+      // check to see if an account is needed for the page
+      this.check_account();      
     })
+  }
+
+
+  // check to see if the user has an account
+  check_account = () => {
+    // check if the user has an account 
+    if (window.localStorage.getItem("user_name") === null) {
+      // iterate through list of account required pages
+      for (let path of this.account_required) {
+        // check to see if the location is in the list of account required pages
+        if (window.location.pathname === path) {
+          // go to account page
+          //history.push("/verify");
+        }
+      }
+    }
   }
 
   // update the active page
@@ -90,6 +111,9 @@ export default class App extends Component{
   // set the active button when the user first visits the site
   componentDidMount = () => {
     this.update_active(window.location.pathname);
+
+    // check to see if an account is needed for the first page
+    this.check_account();
   }
 
   render(){  
