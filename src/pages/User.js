@@ -157,11 +157,6 @@ export default class User extends Component {
     }
 
 
-    show_data = () => {
-        
-    }
-
-
     render() {
         // check to see if the user has an account
         if (window.localStorage.getItem("user_name") !== null){

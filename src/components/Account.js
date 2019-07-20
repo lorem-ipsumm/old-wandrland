@@ -11,9 +11,6 @@ export default class Account extends Component {
     render() {
         return(
             <div className="account-wrapper wrapper">
-                <div className="top-message-wrapper">
-                    <span>It looks like you don't have an account :/</span>
-                </div>
                 <div className="section-wrapper">
                     <div className="svg-wrapper">
                         <AlertTriangle/>
