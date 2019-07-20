@@ -5,7 +5,6 @@
     justify-content: center;
     align-items: center;
     padding: 10px 0px;
-    height: 100% !important;
 }
 
 
@@ -24,6 +23,14 @@
     box-shadow: 0px 4px 4px rgba(0,0,0,.15); 
 }
 
+.center-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
 .section-wrapper{
     flex: 1;
     width: 85%;
@@ -32,8 +39,8 @@
     margin: 10px 0px;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     background: white;
-    padding-top: 40px;
     border-radius: 5px;
     overflow: hidden;
     box-shadow: 0px 4px 4px rgba(0,0,0,.25); 
@@ -51,9 +58,9 @@
 }
 
 .svg-wrapper{
-    width: 45px;
-    height: 45px;
-    margin: 25px 0px;
+    width: 55px;
+    height: 55px;
+    margin: 35px 0px;
     svg{
         width: 100%;
         color: #EE4255;
@@ -62,7 +69,6 @@
 }
 
 .section-text{
-    position: absolute;
     color: #1B1B1B;
     text-align: center;
     font-size: 12pt;

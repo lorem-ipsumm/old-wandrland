@@ -12,20 +12,24 @@ export default class Account extends Component {
         return(
             <div className="account-wrapper wrapper">
                 <div className="section-wrapper">
-                    <div className="svg-wrapper">
-                        <AlertTriangle/>
-                    </div>
-                    <div className="section-text">
-                        To get an account you’ll need to scan one of many hidden QR codes somewhere on campus.
+                    <div className="center-wrapper">
+                        <div className="svg-wrapper">
+                            <AlertTriangle/>
+                        </div>
+                        <div className="section-text">
+                            To get an account you’ll need to scan one of many hidden QR codes somewhere on campus.
+                        </div>
                     </div>
                     <button onClick={() => this.props.history.push("/faq")}>Learn More</button>
                 </div>
                 <div className="section-wrapper">
-                    <div className="svg-wrapper">
-                        <UserCheck/>
-                    </div>
-                    <div className="section-text">
-                        If you have a verified account, tap the button below to login
+                    <div className="center-wrapper">
+                        <div className="svg-wrapper">
+                            <UserCheck/>
+                        </div>
+                        <div className="section-text">
+                            If you have a verified account, tap the button below to login
+                        </div>
                     </div>
                     <button onClick={() => this.props.history.push("/verify")}>Login</button>
                 </div>

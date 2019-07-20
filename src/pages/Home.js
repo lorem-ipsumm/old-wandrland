@@ -125,13 +125,7 @@ export default class Home extends Component {
 
 
     show_data = () => {
-        // check to see if the user has an account
-        if (window.localStorage.getItem("user_name") === null) {
-            // if the user doesn't have an account show the account info page
-            return(
-                <Account history={this.props.history}/>
-            );
-        }else if (this.state.user_data_loaded && this.state.top_players_loaded) {
+        if (this.state.user_data_loaded && this.state.top_players_loaded) {
             return(
                 <div className="data-wrapper">
                     <div className="individual-player-wrapper">
@@ -176,10 +170,19 @@ export default class Home extends Component {
 
 
     render() {
-        return(
-            <div className="home-wrapper wrapper">
-                {this.show_data()} 
-            </div>
-        );
+        // check to see if the user has an account
+        if (window.localStorage.getItem("user_name") === null) {
+            // if the user doesn't have an account show the account info page
+            return(
+                <Account history={this.props.history}/>
+            );
+        } else {
+            // otherwise show the regular data
+            return(
+                <div className="home-wrapper wrapper">
+                    {this.show_data()} 
+                </div>
+            );
+        }
     }
 }

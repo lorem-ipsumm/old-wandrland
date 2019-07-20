@@ -14,7 +14,6 @@
           justify-content: center;
   align-items: center;
   padding: 10px 0px;
-  height: 100% !important;
 }
 
 .top-message-wrapper {
@@ -39,6 +38,23 @@
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
+.center-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 40px;
+}
+
 .section-wrapper {
   -webkit-box-flex: 1;
       -ms-flex: 1;
@@ -56,8 +72,10 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background: white;
-  padding-top: 40px;
   border-radius: 5px;
   overflow: hidden;
   -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -77,9 +95,9 @@
 }
 
 .svg-wrapper {
-  width: 45px;
-  height: 45px;
-  margin: 25px 0px;
+  width: 55px;
+  height: 55px;
+  margin: 35px 0px;
 }
 
 .svg-wrapper svg {
@@ -89,7 +107,6 @@
 }
 
 .section-text {
-  position: absolute;
   color: #1B1B1B;
   text-align: center;
   font-size: 12pt;
