@@ -1,0 +1,94 @@
+.account-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.top-message-wrapper {
+  height: 120px;
+  width: 100%;
+  background-color: #EE4266;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  font-size: 17pt;
+  padding: 0px 10px;
+  text-align: center;
+  margin-bottom: 20px;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+.section-wrapper {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  width: 85%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 20px;
+  background: white;
+  padding-top: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.section-wrapper button {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 45px;
+  font-size: 14pt;
+  background-color: #EE4266;
+  border: none;
+  color: white;
+}
+
+.svg-wrapper {
+  width: 45px;
+  height: 45px;
+  margin: 25px 0px;
+}
+
+.svg-wrapper svg {
+  width: 100%;
+  color: #EE4255;
+  height: 100%;
+}
+
+.section-text {
+  position: absolute;
+  color: #1B1B1B;
+  text-align: center;
+  font-size: 11pt;
+  display: block;
+  width: 80%;
+  bottom: 60px;
+}
+/*# sourceMappingURL=account.css.map */

@@ -1,0 +1,68 @@
+.account-wrapper{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.top-message-wrapper{
+    height: 120px;
+    width: 100%;
+    background-color: #EE4266;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 17pt;
+    padding: 0px 10px;
+    text-align: center;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 4px rgba(0,0,0,.15); 
+}
+
+.section-wrapper{
+    flex: 1;
+    width: 85%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    background: white;
+    padding-top: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0px 4px 4px rgba(0,0,0,.25); 
+    button{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 45px;
+        font-size: 14pt;
+        background-color: #EE4266;
+        border: none;
+        color: white;
+    }
+}
+
+.svg-wrapper{
+    width: 45px;
+    height: 45px;
+    margin: 25px 0px;
+    svg{
+        width: 100%;
+        color: #EE4255;
+        height: 100%;
+    }
+}
+
+.section-text{
+    position: absolute;
+    color: #1B1B1B;
+    text-align: center;
+    font-size: 11pt;
+    display: block;
+    width: 80%;
+    bottom: 60px;
+}
