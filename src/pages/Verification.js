@@ -51,6 +51,12 @@ export default class Verification extends Component {
         // create url for HTTP request
         let url = "https://us-central1-explor-fecbc.cloudfunctions.net/verify_user?user_name=" + user_name + "&uid=" + uid;
 
+        // check to see if the user is logged in
+        if (user_name === null) {
+            // if the user is not logged in, don't send a user name
+            url = "https://us-central1-explor-fecbc.cloudfunctions.net/verify_user?uid=" + uid;
+        }
+
         // hit the verify endpoint
         return fetch(url, {
             method: "GET" 
