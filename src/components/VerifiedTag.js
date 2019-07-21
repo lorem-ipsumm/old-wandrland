@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import "../css/components/tag_verification.css"
-import verified_1 from "../gifs/verified_1.gif";
-import verified_2 from "../gifs/verified_2.gif";
-import verified_3 from "../gifs/verified_3.gif";
-import verified_4 from "../gifs/verified_4.gif";
-import verified_5 from "../gifs/verified_5.gif";
+import verified_1 from "../gifs/verified_1-min.gif";
+import verified_2 from "../gifs/verified_2-min.gif";
+import verified_3 from "../gifs/verified_3-min.gif";
+import verified_4 from "../gifs/verified_4-min.gif";
+import verified_5 from "../gifs/verified_5-min.gif";
 
 /*
     This component appears when a discovered tag has been verified
