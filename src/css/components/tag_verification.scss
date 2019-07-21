@@ -4,6 +4,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
     img{
         position: relative;
         margin-bottom: 20px;
@@ -44,12 +48,18 @@ header{
 }
 
 
+canvas{
+    z-index: 1 !important;
+}
+
+
 .discovery-button-wrapper{
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 10px;
+    z-index: 2;
     button{
         width: 100px;    
         height: 40px;

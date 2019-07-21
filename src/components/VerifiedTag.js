@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Confetti from 'react-confetti';
 import "../css/components/tag_verification.css"
 import verified_1 from "../gifs/verified_1-min.gif";
 import verified_2 from "../gifs/verified_2-min.gif";
@@ -57,6 +58,7 @@ export default class VerifiedTag extends Component {
                 <div className="discovery-button-wrapper">
                     <button onClick={() => this.props.history.push("/user/me")}>Okay</button>
                 </div>
+                <Confetti opacity={.5} numberOfPieces={500} recycle={false} style={{"z-index": "1"}}/>
             </div>
         );
     }

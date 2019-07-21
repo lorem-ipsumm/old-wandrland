@@ -12,6 +12,10 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .tag_verification-wrapper img {
@@ -62,6 +66,10 @@ header {
   margin-bottom: 5px;
 }
 
+canvas {
+  z-index: 1 !important;
+}
+
 .discovery-button-wrapper {
   width: 100%;
   display: -webkit-box;
@@ -74,6 +82,7 @@ header {
       -ms-flex-align: center;
           align-items: center;
   margin-top: 10px;
+  z-index: 2;
 }
 
 .discovery-button-wrapper button {

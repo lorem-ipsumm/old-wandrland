@@ -8798,6 +8798,13 @@ react-app-polyfill@^1.0.1:
     regenerator-runtime "0.13.2"
     whatwg-fetch "3.0.0"
 
+react-confetti@^3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/react-confetti/-/react-confetti-3.1.2.tgz#0007dca24a140f0e2235c732389cb77daade1936"
+  integrity sha512-OTZn0nDad558xRbQEFITwT9NPBmq93ZgC6fk+E0BQIFPl9lQAinvYS//93gVDwsaHgtxL4Lbln6xqH+dXDCezQ==
+  dependencies:
+    tween-functions "^1.2.0"
+
 react-dev-utils@^9.0.1:
   version "9.0.1"
   resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-9.0.1.tgz#5c03d85a0b2537d0c46af7165c24a7dfb274bef2"
@@ -10341,6 +10348,11 @@ tunnel-agent@^0.6.0:
   integrity sha1-J6XeoGs2sEoKmWZ3SykIaPD8QP0=
   dependencies:
     safe-buffer "^5.0.1"
+
+tween-functions@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/tween-functions/-/tween-functions-1.2.0.tgz#1ae3a50e7c60bb3def774eac707acbca73bbc3ff"
+  integrity sha1-GuOlDnxguz3vd06scHrLynO7w/8=
 
 tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   version "0.14.5"
