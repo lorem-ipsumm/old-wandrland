@@ -29,6 +29,12 @@ export default class VerifiedTag extends Component {
         }
     }
 
+    // show the gif once the img tag finishes loading
+    show_gif = (event) => {
+        let image = event.target;
+        image.classList.add("loaded");
+    }
+
 
     componentDidMount = () => {
         this.setState({
@@ -39,7 +45,7 @@ export default class VerifiedTag extends Component {
     render() {
         return(
             <div className="tag_verification-wrapper wrapper">
-                <img className="success-gif" alt="sucess-gif" src={this.state.current_gif}/>
+                <img className="success-gif" alt="sucess-gif" onLoad={(e) => this.show_gif(e)} src={this.state.current_gif}/>
                 <header>
                     Nice Find!
                 </header>
