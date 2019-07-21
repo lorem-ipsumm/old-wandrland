@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 import "../css/components/tag_verification.css"
+import verified_1 from "../gifs/verified_1.gif";
+import verified_2 from "../gifs/verified_2.gif";
+import verified_3 from "../gifs/verified_3.gif";
+import verified_4 from "../gifs/verified_4.gif";
+import verified_5 from "../gifs/verified_5.gif";
 
 /*
     This component appears when a discovered tag has been verified
@@ -11,12 +16,11 @@ export default class VerifiedTag extends Component {
 
         // list of success gifs
         this.gifs = [
-            "https://media.giphy.com/media/fdyZ3qI0GVZC0/giphy.gif",
-            "https://media.giphy.com/media/g9582DNuQppxC/giphy.gif",
-            "https://media.giphy.com/media/3o6fJ1BM7R2EBRDnxK/giphy.gif",
-            "https://media.giphy.com/media/wZjlCH43M3M0U/giphy.gif",
-            "https://media.giphy.com/media/3oFzmiMu3v4LIXpJBK/giphy.gif",
-            "https://media.giphy.com/media/3o6fJ1BM7R2EBRDnxK/giphy.gif"
+            verified_1,
+            verified_2,
+            verified_3,
+            verified_4,
+            verified_5
         ];
 
         this.state = {

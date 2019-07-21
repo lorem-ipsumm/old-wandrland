@@ -14,7 +14,7 @@ export default class Lost extends Component {
                 <img alt="lost-gif" src="https://media.giphy.com/media/3o7aCTPPm4OHfRLSH6/giphy.gif"/>
                 <span className="header">You Look Lost :/</span>
                 <span className="text">Don't worry, it happens to the best of us</span>
-                <button onClick={() => this.props.history.push("/")}>Go Home</button>
+                <button onClick={() => this.props.history.push("/")}>Home</button>
             </div>
         );
     }
