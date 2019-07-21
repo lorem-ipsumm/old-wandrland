@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import "../css/pages/home.css";
 import Loading from "../components/Loading.js";
 import Account from "../components/Account.js";
+import  Error from "../components/Error.js";
 import { Award } from "react-feather";
 
 /*
@@ -22,7 +23,11 @@ export default class Home extends Component {
             // received user data
             user_data: [],
             // top player data
-            top_players: []
+            top_players: [],
+            // error flag
+            error: false,
+            // error message
+            error_message: ""
         }
     }
 
@@ -42,7 +47,7 @@ export default class Home extends Component {
         
         .then(() => {
             // check data for errors
-            if (!data.error) {
+            if (data.rank !== -1 && !data.error) {
                 // add delay
                 setTimeout(() => {
                     // set state varaibles
@@ -51,6 +56,16 @@ export default class Home extends Component {
                         user_data: data
                     });
                 }, 1500)
+            } else {
+                this.setState({
+                    error: true,
+                    error_message: data.eror
+                });
+
+                // try fixing
+                if (!data.user_exists) {
+                    window.localStorage.removeItem("user_name");
+                }
             }
         });
 
@@ -170,8 +185,11 @@ export default class Home extends Component {
 
 
     render() {
-        // check to see if the user has an account
-        if (window.localStorage.getItem("user_name") === null) {
+        if (this.state.error) {
+            return(
+                <Error history={this.props.history}/>                
+            );
+        } else if (window.localStorage.getItem("user_name") === null) {
             // if the user doesn't have an account show the account info page
             return(
                 <Account history={this.props.history}/>

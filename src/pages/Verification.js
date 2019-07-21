@@ -77,6 +77,7 @@ export default class Verification extends Component {
                 });
 
                 if (json_data.success) {
+                    // set the user's username
                     window.localStorage.setItem("user_name", json_data.user_name);
 
                     // redirect to user page

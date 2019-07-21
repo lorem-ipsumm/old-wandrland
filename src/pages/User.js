@@ -93,6 +93,8 @@ export default class User extends Component {
                             //rarity: json_data.tag_data.obtained/json_data.discovery_count
                         });
                     },1500);
+                } else {
+                    console.log("whoop");
                 }
             });
         });

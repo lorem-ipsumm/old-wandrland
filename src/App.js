@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import "./css/main.css"
-import { Route,  Router } from 'react-router-dom';
+import { Route,  Router, Switch } from 'react-router-dom';
 import Home from "./pages/Home.js";
 import Faq from "./pages/Faq.js";
 import User from "./pages/User.js";
 import Discovery from "./pages/Discovery.js";
 import Navbar from "./components/Navbar.js";
 import Verification from "./pages/Verification.js";
+import Lost from "./pages/Lost.js";
 import history from "./history";
 
 /*
@@ -120,11 +121,14 @@ export default class App extends Component{
     return (
       <div className="app">
         <Router history={history}>
-          <Route exact path="/faq" component={Faq}/>
-          <Route path="/user" component={User}/>
-          <Route path="/discovery" component={Discovery}/>
-          <Route path="/verify" component={Verification}/>
-          <Route exact path="/" component={Home}/>
+          <Switch>
+            <Route exact path="/faq" component={Faq}/>
+            <Route path="/user" component={User}/>
+            <Route path="/discovery" component={Discovery}/>
+            <Route exact path="/verify" component={Verification}/>
+            <Route exact path="/" component={Home}/>
+            <Route component={Lost}/>
+          </Switch>
         </Router>
         <Navbar history={history}/> 
       </div>

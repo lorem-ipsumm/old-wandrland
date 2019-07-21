@@ -1,0 +1,104 @@
+.error-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.error-wrapper span {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.error-wrapper .header {
+  font-size: 40pt;
+  font-weight: bold;
+  color: #EE4266;
+}
+
+.error-wrapper .text {
+  font-size: 15pt;
+}
+
+.error-wrapper .subtext {
+  font-size: 14pt;
+  color: #1e1e1e;
+}
+
+.error-wrapper button {
+  width: 100px;
+  height: 40px;
+  border-radius: 2px;
+  font-size: 13pt;
+  border: none;
+  -webkit-box-shadow: 0px 1px 4px rgba(146, 146, 146, 0.9);
+          box-shadow: 0px 1px 4px rgba(146, 146, 146, 0.9);
+  background-color: #EE4266;
+  color: white;
+}
+
+.lost-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.lost-wrapper .header {
+  font-size: 20pt;
+  font-weight: bold;
+  color: #EE4266;
+  margin-bottom: 5px;
+}
+
+.lost-wrapper .text {
+  font-size: 13pt;
+  width: 90%;
+  text-align: center;
+  color: #1e1e1e;
+  margin-bottom: 20px;
+}
+
+.lost-wrapper .img-wrapper {
+  width: 90%;
+  height: auto;
+}
+
+.lost-wrapper img {
+  width: 80%;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 1px 4px rgba(146, 146, 146, 0.9);
+          box-shadow: 0px 1px 4px rgba(146, 146, 146, 0.9);
+  margin-bottom: 25px;
+}
+
+.lost-wrapper button {
+  width: 100px;
+  height: 40px;
+  border-radius: 2px;
+  font-size: 13pt;
+  border: none;
+  -webkit-box-shadow: 0px 1px 4px rgba(146, 146, 146, 0.9);
+          box-shadow: 0px 1px 4px rgba(146, 146, 146, 0.9);
+  background-color: #EE4266;
+  color: white;
+}
+/*# sourceMappingURL=error.css.map */
