@@ -45,7 +45,7 @@ export default class Discovery extends Component {
             } else {
                 // show the unverified tag component
                 return (
-                    <VerifiedTag history={this.props.history} data={this.state.verification_data}/>
+                    <UnverifiedTag history={this.props.history} data={this.state.verification_data}/>
                 );
             }
         } else {
