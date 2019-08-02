@@ -109,6 +109,38 @@ export default class App extends Component{
     }
   }
 
+
+  // return local storage variables for urls
+  get_local_storage = () => {
+
+      // check to see if there are variables stored
+      if (window.localStorage.length < 1) {
+          return "";
+      }
+
+      // variables for url
+      let variables = "";
+
+      // number of variables
+      let count = 0;
+
+      // iterate through keys
+      for (let i = 0; i < window.localStorage.length; i++) {
+          // check to see if it's an 'important' variable
+          if (localStorage.key(i).startsWith("l_")){
+              // update variables string
+              variables += "&" + localStorage.key(i) + "=" + localStorage.getItem(localStorage.key(i));            
+
+              // increment count
+              count ++;
+          }
+      }
+
+      // return variables and count
+      return({"variables": variables, "count": count});
+  }
+
+
   // set the active button when the user first visits the site
   componentDidMount = () => {
     this.update_active(window.location.pathname);
@@ -123,10 +155,10 @@ export default class App extends Component{
         <Router history={history}>
           <Switch>
             <Route exact path="/faq" component={Faq}/>
-            <Route path="/user" component={User}/>
+            <Route path="/user" render={(props) => <User {...props} get_local_storage = {this.get_local_storage}/>}/>
             <Route path="/discovery" component={Discovery}/>
             <Route exact path="/verify" component={Verification}/>
-            <Route exact path="/" component={Home}/>
+            <Route exact path="/" component={() => <Home get_local_storage = {this.get_local_storage}/>}/>
             <Route component={Lost}/>
           </Switch>
         </Router>

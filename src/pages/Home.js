@@ -82,7 +82,6 @@ export default class Home extends Component {
 
             // set JSON data
             data = JSON.parse(decoded_data);
-            console.log(data);
         })
         
         .then(() => {
@@ -102,21 +101,40 @@ export default class Home extends Component {
     }
 
 
-    // send a request to the bab
-    componentDidMount = () => {
+    // return local storage variables for urls
+    get_local_storage = () => {
 
-        let user_name = localStorage.getItem("user_name");
-
-        // do not send any requests if the user doesn't have an account
-        if (window.localStorage.getItem("user_name") === null){
-            return;
+        // check to see if there are variables stored
+        if (window.localStorage.length < 1) {
+            return "";
         }
 
+        // variables for url
+        let variables = "";
+
+        // iterate through keys
+        for (let i = 0; i < window.localStorage.length; i++) {
+            // check to see if it's an 'important' variable
+            if (localStorage.key(i).startsWith("l_")){
+                // update variables string
+                variables += "&" + localStorage.key(i) + "=" + localStorage.getItem(localStorage.key(i));            
+            }
+        }
+
+        return variables;
+    }
+
+
+    // send a request to the bab
+    componentDidMount = () => {
         // create url for top players 
         let top_players_url = "https://us-central1-explor-fecbc.cloudfunctions.net/get_top_players?limit=10";
 
         // create url for user data
-        let user_data_url = "https://us-central1-explor-fecbc.cloudfunctions.net/get_user_data?user_name=" + user_name;
+        let user_data_url = "https://us-central1-explor-fecbc.cloudfunctions.net/get_user_data?";
+
+        // add the local storage variables to the url
+        user_data_url += this.props.get_local_storage().variables.substr(1);
 
         // send request to backend for top players data
         fetch(top_players_url, {
@@ -136,6 +154,26 @@ export default class Home extends Component {
             // get the parseable data
             this.read_user_data(response);
         });
+    }
+
+
+    // check to see the user has user data stored
+    check_storage = () => {
+        
+        // count of user data variables
+        let count = 0;
+
+        // iterate through all items stored in local storage
+        for (let i = 0; i < localStorage.length; i++) {
+            // check to see if it's a user variable
+            if (localStorage.key(i).startsWith("l_")) {
+                // increment count
+                count++;
+            }
+        }
+        
+        // return the count
+        return count;
     }
 
 
@@ -189,7 +227,7 @@ export default class Home extends Component {
             return(
                 <Error history={this.props.history}/>                
             );
-        } else if (window.localStorage.getItem("user_name") === null) {
+        } else if (this.props.get_local_storage().count < 2) {
             // if the user doesn't have an account show the account info page
             return(
                 <Account history={this.props.history}/>

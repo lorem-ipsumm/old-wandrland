@@ -56,6 +56,30 @@ export default class Discovery extends Component {
         }
     }
 
+
+    // return local storage variables for urls
+    get_local_storage = () => {
+
+        // check to see if there are variables stored
+        if (window.localStorage.length < 1) {
+            return "";
+        }
+
+        // variables for url
+        let variables = "";
+
+        // iterate through keys
+        for (let i = 0; i < window.localStorage.length; i++) {
+            // check to see if it's an 'important' variable
+            if (localStorage.key(i).startsWith("l_")){
+                // update variables string
+                variables += "&" + localStorage.key(i) + "=" + localStorage.getItem(localStorage.key(i));            
+            }
+        }
+
+        return variables;
+    }
+
     // once the component mounts:
     // 1. send the tag to the function to verify
     // 2. if verified, show user's new score and the name of the tag
@@ -65,21 +89,20 @@ export default class Discovery extends Component {
         let tag = window.location.pathname.substr(window.location.pathname.lastIndexOf("/")+1);
 
         // url for the verfication endpoint
-        let url = "https://us-central1-explor-fecbc.cloudfunctions.net/verify_tag";
+        let url = "https://us-central1-explor-fecbc.cloudfunctions.net/verify_tag?";
 
         // check to see if there is a tag in the url
         if (tag.length > 1) {
-            url = url + "?tag=" + tag;            
+            url = url + "tag=" + tag;            
         }
 
-        // if the user has a user name add it to the url
-        if (localStorage.getItem("user_name") !== null) {
-            // if there is a parameter before, a '&' is used
-            if(tag.length > 1)
-                url = url + "&user_name=" + localStorage.getItem("user_name");
-            else
-                url = url + "?user_name=" + localStorage.getItem("user_name");
-        }
+        // if there is a parameter before, a '&' is used
+        if(tag.length > 1)
+            url += this.get_local_storage();
+        else
+            url += this.get_local_storage().substr(1);
+
+
 
         // hit the verify endpoint
         return fetch(url, {
@@ -97,6 +120,15 @@ export default class Discovery extends Component {
 
                 console.log(json_data);
 
+                // iterate through the data being returned
+                Object.keys(json_data).forEach(function(key) {
+                    // check if it's 'important'
+                    if (key.startsWith("l_")) {
+                        // save the important value
+                        localStorage.setItem(key,json_data[key]);
+                    }
+                });
+
                 // add small delay to allow for reading fun fact!
                 setTimeout(() => {
 
@@ -107,9 +139,8 @@ export default class Discovery extends Component {
                         verification_data: json_data
                     });
 
-
                     // save the user's user name
-                    localStorage.setItem("user_name",json_data.user_name);
+                    // localStorage.setItem("user_name",json_data.user_name);
 
                 },1500);
 
