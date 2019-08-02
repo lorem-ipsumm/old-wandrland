@@ -46,25 +46,12 @@ export default class User extends Component {
 
     // request data from the backend when the component mounts
     componentDidMount = () => {
-        // get username
-        let user_name = window.location.pathname.substr(window.location.pathname.lastIndexOf("/")+1);
-
-        // do not send any requests if the user doesn't have an account
-        if (window.localStorage.getItem("user_name") === null){
-            return;
-        }
-
-        // if the url ends with "me" then request data for user
-        if (user_name === "me") {
-            // set user name to saved user name
-            user_name = localStorage.getItem("user_name"); 
-
-            // set state username
-            this.setState({user_name: user_name});
-        }
 
         // create the url
-        let url = "https://us-central1-explor-fecbc.cloudfunctions.net/get_user_data?user_name=" + user_name;
+        let url = "https://us-central1-explor-fecbc.cloudfunctions.net/get_user_data?";
+
+        // add the local storage variables to the url
+        url += this.props.get_local_storage().variables.substr(1);
 
         return fetch(url, {
             method: "GET"
@@ -89,7 +76,8 @@ export default class User extends Component {
                             tags: json_data.tags,
                             user_data_loaded: true,
                             tags_list: json_data.tags_list,
-                            is_verified: json_data.is_verified
+                            is_verified: json_data.is_verified,
+                            user_name: json_data.user_name
                             //rarity: json_data.tag_data.obtained/json_data.discovery_count
                         });
                     },1500);
@@ -161,7 +149,8 @@ export default class User extends Component {
 
     render() {
         // check to see if the user has an account
-        if (window.localStorage.getItem("user_name") !== null){
+        // if two user variables are stored in local storage, show the page
+        if (this.props.get_local_storage().count >= 2){
             return(
                 <div className="user-wrapper wrapper">
                     <div className="user-info-top">
