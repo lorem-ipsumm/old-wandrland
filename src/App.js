@@ -113,10 +113,7 @@ export default class App extends Component{
   // return local storage variables for urls
   get_local_storage = () => {
 
-      // check to see if there are variables stored
-      if (window.localStorage.length < 1) {
-          return "";
-      }
+      
 
       // variables for url
       let variables = "";

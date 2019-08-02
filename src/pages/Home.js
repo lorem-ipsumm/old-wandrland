@@ -100,33 +100,13 @@ export default class Home extends Component {
 
     }
 
-
-    // return local storage variables for urls
-    get_local_storage = () => {
-
-        // check to see if there are variables stored
-        if (window.localStorage.length < 1) {
-            return "";
-        }
-
-        // variables for url
-        let variables = "";
-
-        // iterate through keys
-        for (let i = 0; i < window.localStorage.length; i++) {
-            // check to see if it's an 'important' variable
-            if (localStorage.key(i).startsWith("l_")){
-                // update variables string
-                variables += "&" + localStorage.key(i) + "=" + localStorage.getItem(localStorage.key(i));            
-            }
-        }
-
-        return variables;
-    }
-
-
     // send a request to the bab
     componentDidMount = () => {
+
+        // do not send anything if user variables aren't saved
+        if (this.props.get_local_storage().count < 2)
+            return;
+
         // create url for top players 
         let top_players_url = "https://us-central1-explor-fecbc.cloudfunctions.net/get_top_players?limit=10";
 

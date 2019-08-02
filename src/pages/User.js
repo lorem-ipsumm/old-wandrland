@@ -47,6 +47,10 @@ export default class User extends Component {
     // request data from the backend when the component mounts
     componentDidMount = () => {
 
+        // do not send anything if user variables aren't saved
+        if (this.props.get_local_storage().count < 2)
+            return;
+
         // create the url
         let url = "https://us-central1-explor-fecbc.cloudfunctions.net/get_user_data?";
 
