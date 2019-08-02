@@ -7,6 +7,7 @@ import { UserCheck } from "react-feather";
    This component catches users that don't have accounts 
 */
 
+
 export default class Account extends Component {
     render() {
         return(

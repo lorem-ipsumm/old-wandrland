@@ -112,9 +112,6 @@ export default class App extends Component{
 
   // return local storage variables for urls
   get_local_storage = () => {
-
-      
-
       // variables for url
       let variables = "";
 
@@ -152,10 +149,10 @@ export default class App extends Component{
         <Router history={history}>
           <Switch>
             <Route exact path="/faq" component={Faq}/>
-            <Route path="/user" render={(props) => <User {...props} get_local_storage = {this.get_local_storage}/>}/>
+            <Route path="/user" render={(props) => <User {...props} history={history} get_local_storage = {this.get_local_storage}/>}/>
             <Route path="/discovery" component={Discovery}/>
-            <Route exact path="/verify" component={Verification}/>
-            <Route exact path="/" component={() => <Home get_local_storage = {this.get_local_storage}/>}/>
+            <Route exact path="/verify" render={(props) => <Verification {...props} get_local_storage = {this.get_local_storage}/>}/>
+            <Route exact path="/" component={(props) => <Home {...props} history={history} get_local_storage = {this.get_local_storage}/>}/>
             <Route component={Lost}/>
           </Switch>
         </Router>
