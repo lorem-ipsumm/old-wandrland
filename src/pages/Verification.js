@@ -22,8 +22,6 @@ export default class Verification extends Component {
             // callback function
             callbacks: {
                 signInSuccessWithAuthResult: (e) => {
-                    // store uid in local storage
-                    localStorage.setItem("uid",e.user.uid);
                     // send uid provided by google to the backend
                     this.send_verification(e.user.uid);
                 }
@@ -44,18 +42,21 @@ export default class Verification extends Component {
 
     // send the verification id (uid) to the backend
     send_verification = (uid) => {
-        
-        // get user name
-        let user_name = localStorage.getItem("user_name");
 
-        // create url for HTTP request
-        let url = "https://us-central1-explor-fecbc.cloudfunctions.net/verify_user?user_name=" + user_name + "&uid=" + uid;
+        let url;
 
         // check to see if the user is logged in
-        if (user_name === null) {
+        if (this.props.get_local_storage().count < 2) {
             // if the user is not logged in, don't send a user name
             url = "https://us-central1-explor-fecbc.cloudfunctions.net/verify_user?uid=" + uid;
+        } else {
+            // create url for HTTP request
+            url = "https://us-central1-explor-fecbc.cloudfunctions.net/verify_user?uid=" + uid
+
+            //add the user credentials
+            url += this.props.get_local_storage().variables;
         }
+
 
         // hit the verify endpoint
         return fetch(url, {
@@ -76,18 +77,22 @@ export default class Verification extends Component {
                     verification_complete: true
                 });
 
-                if (json_data.success) {
-                    // set the user's username
-                    window.localStorage.setItem("user_name", json_data.user_name);
+                // iterate through the data being returned
+                Object.keys(json_data).forEach(function(key) {
+                    // check if it's 'important'
+                    if (key.startsWith("l_")) {
+                        // save the important value
+                        localStorage.setItem(key,json_data[key]);
+                    }
+                });
 
+                if (json_data.success) {
                     // redirect to user page
                     this.props.history.push("/user/me");
                 } else {
                     // TODO: display authentication failure message
                     this.props.history.push("/verify");
                 }
-
-
             });
 
         });
