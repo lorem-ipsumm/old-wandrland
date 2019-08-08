@@ -43,17 +43,29 @@ export default class VerifiedTag extends Component {
         });
     }
 
+
+    // calculate how many points the user will be awarded
+    calculate_points = () => {
+        let worth = this.props.data.tag_data.worth;
+        let rarity = this.props.data.tag_data.rarity;
+
+        return(Math.round(worth + (1/rarity)));
+    }
+
     render() {
         return(
             <div className="tag_verification-wrapper wrapper">
                 <img className="success-gif" alt="sucess-gif" onLoad={(e) => this.show_gif(e)} src={this.state.current_gif}/>
                 <header>
-                    Nice Find!
+                    <span className="discovery-name color">{this.props.data.tag_data.name}</span>
                 </header>
 
                 <div className="discovery-info">
-                    <span>You Discovered: {this.props.data.tag_data.name}</span>
-                    <span className="discovery-reward color">+{this.props.data.tag_data.worth} Points!</span>
+                    <div className="points-info">
+                        <span>Rarity: {this.props.data.tag_data.rarity.toFixed(2)}</span>
+                        <span>Worth: {this.props.data.tag_data.worth}</span>
+                    </div>
+                    <span className="discovery-reward color">+{this.calculate_points()} Points!</span>
                 </div>
                 <div className="discovery-button-wrapper">
                     <button onClick={() => this.props.history.push("/user/me")}>Okay</button>
