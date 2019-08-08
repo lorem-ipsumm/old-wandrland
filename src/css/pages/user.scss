@@ -38,6 +38,9 @@
     align-items: center;
     flex-direction: column;
     border-radius: 5px;
+    animation: fade-in-2 1s ease;
+    animation-iteration-count: initial;
+    position: relative;
     .tag-name{
         font-size: 13pt;
     }
@@ -127,4 +130,15 @@
 .value{
     color: #EE4266;
     position: relative;
+}
+
+
+@keyframes fade-in-2{
+    from{
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
+    }
 }
