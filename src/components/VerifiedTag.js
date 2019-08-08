@@ -74,7 +74,7 @@ export default class VerifiedTag extends Component {
                 <div className="discovery-button-wrapper">
                     <button onClick={() => this.props.history.push("/user/me")}>Okay</button>
                 </div>
-                <Confetti opacity={.5} numberOfPieces={500} recycle={false} style={{"z-index": "1"}}/>
+                <Confetti tweenDuration={9000} opacity={.3} numberOfPieces={150} gravity={.5} friction={1} recycle={false} />
             </div>
         );
     }
