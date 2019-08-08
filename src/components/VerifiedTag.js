@@ -46,9 +46,13 @@ export default class VerifiedTag extends Component {
 
     // calculate how many points the user will be awarded
     calculate_points = () => {
+        // get the tag worth
         let worth = this.props.data.tag_data.worth;
+        
+        // get the tag rarity
         let rarity = this.props.data.tag_data.rarity;
 
+        // return the rounded rarity
         return(Math.round(worth + (1/rarity)));
     }
 
