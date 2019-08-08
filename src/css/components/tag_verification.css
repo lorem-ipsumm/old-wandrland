@@ -34,6 +34,10 @@
   height: 175px;
 }
 
+.discovery-reward {
+  font-weight: bolder;
+}
+
 header {
   font-size: 25pt;
   text-align: center;
@@ -63,7 +67,7 @@ header {
 }
 
 .discovery-info span {
-  margin-bottom: 5px;
+  margin: 10px 0px;
 }
 
 canvas {
@@ -119,6 +123,21 @@ canvas {
 .info-text span {
   width: 100%;
   color: #1e1e1e;
+}
+
+.points-info {
+  width: 100%;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.points-info span {
+  margin: 0px 10px;
 }
 
 a {
