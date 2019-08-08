@@ -67,6 +67,11 @@
       -ms-flex-direction: column;
           flex-direction: column;
   border-radius: 5px;
+  -webkit-animation: fade-in-2 1s ease;
+          animation: fade-in-2 1s ease;
+  -webkit-animation-iteration-count: initial;
+          animation-iteration-count: initial;
+  position: relative;
 }
 
 .tag-wrapper .tag-name {
@@ -190,5 +195,23 @@
 .value {
   color: #EE4266;
   position: relative;
+}
+
+@-webkit-keyframes fade-in-2 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-2 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 /*# sourceMappingURL=user.css.map */

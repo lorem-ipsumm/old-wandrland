@@ -93,6 +93,7 @@ export default class User extends Component {
 
     }
 
+    // show the tag data 
     show_tags = () => {
         // show loading before the data is loaded
         if (this.state.user_data_loaded) {
@@ -155,34 +156,42 @@ export default class User extends Component {
         // check to see if the user has an account
         // if two user variables are stored in local storage, show the page
         if (this.props.get_local_storage().count >= 2){
-            return(
-                <div className="user-wrapper wrapper">
-                    <div className="user-info-top">
-                        <span className="user-info-name">{this.state.user_name}</span>
-                        <div className="user-info-stats">
-                        <div className="user-stat">
-                                <span className="label">Rank</span>
-                                <span className="value">{this.state.rank}</span>
-                        </div> 
-                        <div className="user-stat">
-                                <span className="label">Points</span>
-                                <span className="value">{this.state.score}</span>
-                        </div> 
-                        <div className="user-stat">
-                                <span className="label">Tags</span>
-                                <span className="value">{this.state.tags}</span>
-                        </div> 
-                        </div> 
+            if (this.state.user_data_loaded) {
+                return(
+                    <div className="user-wrapper wrapper">
+                        <div className="user-info-top">
+                            <span className="user-info-name">{this.state.user_name}</span>
+                            <div className="user-info-stats">
+                            <div className="user-stat">
+                                    <span className="label">Rank</span>
+                                    <span className="value">{this.state.rank}</span>
+                            </div> 
+                            <div className="user-stat">
+                                    <span className="label">Points</span>
+                                    <span className="value">{this.state.score}</span>
+                            </div> 
+                            <div className="user-stat">
+                                    <span className="label">Tags</span>
+                                    <span className="value">{this.state.tags}</span>
+                            </div> 
+                            </div> 
+                        </div>
+                        {this.show_warning()}
+                        <div className="user-info-middle">
+                            <span>Tags Discovered</span>
+                        </div>
+                        <div className="user-info-bottom">
+                            {this.show_tags()}
+                        </div>
                     </div>
-                    {this.show_warning()}
-                    <div className="user-info-middle">
-                        <span>Tags Discovered</span>
+                );
+            } else {
+                return(
+                    <div className="user-wrapper wrapper">
+                        <Loading/>
                     </div>
-                    <div className="user-info-bottom">
-                        {this.show_tags()}
-                    </div>
-                </div>
-            );
+                );
+            }
         } else {
             // show account page if user does not have an account
             return(
