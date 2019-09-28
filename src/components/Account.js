@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import "../css/pages/account.css";
-import { AlertTriangle } from "react-feather";
 import { UserCheck } from "react-feather";
 import wandr_pic from "../assets/images/wandr_pic.svg";
 
@@ -22,7 +21,7 @@ export default class Account extends Component {
                             You've stumbled upon something interesting.
                         </div>
                     </div>
-                    <button onClick={() => this.props.history.push("/faq")}>Join the game</button>
+                    <button onClick={() => this.props.history.push("/discovery/welcome")}>Join the game</button>
                 </div>
                 <div className="section-wrapper">
                     <div className="center-wrapper">

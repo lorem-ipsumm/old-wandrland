@@ -12,9 +12,9 @@ export default class Error extends Component {
         return(
             <div className="error-wrapper wrapper">
                 <span className="header">Uh oh</span>
-                <span className="text">It looks like something broke somewhere :/</span>
-                <span className="subtext">I'm on it!</span>
-                <button onClick={() => this.props.history.push("/home")}>Go Home</button>
+                <span className="text">It looks like something broke somewhere</span>
+                <span className="subtext">I apologize</span>
+                <button onClick={() => this.props.history.push("/")}>Home</button>
             </div>
         );
     }
