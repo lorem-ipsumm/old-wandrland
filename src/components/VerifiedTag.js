@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import Confetti from 'react-confetti';
 import "../css/components/tag_verification.css"
-import verified_1 from "../gifs/verified_1-min.gif";
-import verified_2 from "../gifs/verified_2-min.gif";
-import verified_3 from "../gifs/verified_3-min.gif";
-import verified_4 from "../gifs/verified_4-min.gif";
-import verified_5 from "../gifs/verified_5-min.gif";
+import verified_1 from "../assets/gifs/verified_1-min.gif";
+import verified_2 from "../assets/gifs/verified_2-min.gif";
+import verified_3 from "../assets/gifs/verified_3-min.gif";
+import verified_4 from "../assets/gifs/verified_4-min.gif";
+import verified_5 from "../assets/gifs/verified_5-min.gif";
 
 /*
     This component appears when a discovered tag has been verified
@@ -46,9 +46,13 @@ export default class VerifiedTag extends Component {
 
     // calculate how many points the user will be awarded
     calculate_points = () => {
+        // get the tag worth
         let worth = this.props.data.tag_data.worth;
+        
+        // get the tag rarity
         let rarity = this.props.data.tag_data.rarity;
 
+        // return the rounded rarity
         return(Math.round(worth + (1/rarity)));
     }
 
@@ -70,7 +74,7 @@ export default class VerifiedTag extends Component {
                 <div className="discovery-button-wrapper">
                     <button onClick={() => this.props.history.push("/user/me")}>Okay</button>
                 </div>
-                <Confetti opacity={.5} numberOfPieces={500} recycle={false} style={{"z-index": "1"}}/>
+                <Confetti tweenDuration={9000} opacity={.3} numberOfPieces={150} gravity={.5} friction={1} recycle={false} />
             </div>
         );
     }

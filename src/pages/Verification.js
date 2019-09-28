@@ -18,14 +18,16 @@ export default class Verification extends Component {
         // setup config for login popup
         this.uiConfig = {
             // Popup signin flow rather than redirect flow.
-            signInFlow: 'popup',
+            signInFlow: 'redirect',
+            
             // callback function
             callbacks: {
                 signInSuccessWithAuthResult: (e) => {
                     // send uid provided by google to the backend
-                    this.send_verification(e.user.uid);
+                    this.send_verification(e.user.phoneNumber);
                 }
             },
+            
 
             // We will display Google and Facebook as auth providers.
             signInOptions: [
@@ -34,28 +36,35 @@ export default class Verification extends Component {
             ]
         };
 
+        // set state
         this.state = {
-            verification_complete: false
+            google_verification_complete: false,
+            uid: undefined
         }
     }
 
 
     // send the verification id (uid) to the backend
-    send_verification = (uid) => {
+    send_verification = (phone_number) => {
 
         let url;
 
         // check to see if the user is logged in
         if (this.props.get_local_storage().count < 2) {
             // if the user is not logged in, don't send a user name
-            url = "https://us-central1-explor-fecbc.cloudfunctions.net/verify_user?uid=" + uid;
+            url = "https://us-central1-explor-fecbc.cloudfunctions.net/verify_user?phone_number=" + phone_number;
         } else {
             // create url for HTTP request
-            url = "https://us-central1-explor-fecbc.cloudfunctions.net/verify_user?uid=" + uid
+            url = "https://us-central1-explor-fecbc.cloudfunctions.net/verify_user?phone_number=" + phone_number;
 
             //add the user credentials
             url += this.props.get_local_storage().variables;
         }
+
+        // show loading while waiting for response
+        this.setState({
+            google_verification_complete: true
+        });
 
 
         // hit the verify endpoint
@@ -73,10 +82,7 @@ export default class Verification extends Component {
                 // convert data to JSON
                 let json_data = JSON.parse(data);
 
-                this.setState({
-                    verification_complete: true
-                });
-
+                
                 // iterate through the data being returned
                 Object.keys(json_data).forEach(function(key) {
                     // check if it's 'important'
@@ -88,10 +94,10 @@ export default class Verification extends Component {
 
                 if (json_data.success) {
                     // redirect to user page
-                    this.props.history.push("/user/me");
+                    window.location.assign("user/me");
                 } else {
                     // TODO: display authentication failure message
-                    this.props.history.push("/verify");
+                    window.location.assign("lost")
                 }
             });
 
@@ -102,7 +108,7 @@ export default class Verification extends Component {
     // show loading screen after the verification process
     // sometimes it hangs for a little bit
     show_data = () => {
-        if (this.state.verification_complete) {
+        if (this.state.google_verification_complete) {
             return(
                 <Loading/>
             );
