@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import "../css/pages/account.css";
 import { AlertTriangle } from "react-feather";
 import { UserCheck } from "react-feather";
+import wandr_pic from "../assets/images/wandr_pic.svg";
 
 /*
    This component catches users that don't have accounts 
@@ -15,7 +16,7 @@ export default class Account extends Component {
                 <div className="section-wrapper">
                     <div className="center-wrapper">
                         <div className="svg-wrapper">
-                            <AlertTriangle/>
+                            <img src={wandr_pic} alt={"wandr-logo"}></img>
                         </div>
                         <div className="section-text">
                             You've stumbled upon something interesting.
