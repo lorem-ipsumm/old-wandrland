@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ConfirmButton from '../components/ConfirmButton.js'
 import "../css/pages/faq.css";
 
 /*
@@ -8,6 +9,77 @@ import "../css/pages/faq.css";
 */
 
 export default class Faq extends Component {
+
+
+    // handle confirm button confirm
+    delete_account = () => {
+        // check to see if the user is logged in
+        let url = "https://us-central1-explor-fecbc.cloudfunctions.net/delete_user?";
+
+        //add the user credentials
+        url += this.props.get_local_storage().variables.substring("1");
+        
+        console.log(url)
+
+        // hit the delete_user endpoint
+        return fetch(url, {
+            method: "GET" 
+        })
+        .then(response => {
+            // read data
+            response.body.getReader().read()
+            .then(({done, value}) => {
+                
+                // decode the data
+                let data = new TextDecoder("utf-8").decode(value);
+
+                // convert data to JSON
+                let json_data = JSON.parse(data);
+
+                // check if there was a success
+                if (json_data.success) {
+                    // clear local storage
+                    localStorage.clear()
+
+                    console.log("deleted");
+
+                    // redirect to user page
+                    window.location.assign("/");
+                } else {
+                    // TODO: display authentication failure message
+                    window.location.assign("lost")
+                }
+            });
+
+        });   
+    }
+
+    // check to see if delete account
+    // should be shown
+    show_delete_button = () => {
+        // are the account variables created?
+        if (this.props.get_local_storage().count >= 2) {
+            return(
+                <div className="question-wrapper">
+                    <ConfirmButton text="Delete Account" onConfirm={this.delete_account}/>
+                </div>
+            );
+        }
+    }
+
+    // check to see if verify should be shown
+    show_verify = () => {
+        // does the user have any account info
+        if (this.props.get_local_storage().count >= 2) {
+            return(
+                <div>
+                    <span className="text">To restore a verified account tap the login button and you will be asked to verify your phone number again.</span>
+                    <button onClick={() => this.props.history.push("/verify")}>Verify Account</button>
+                </div>
+            );
+        }
+    }
+
     render() {
         return(
             <div className="faq-wrapper wrapper">
@@ -27,8 +99,7 @@ export default class Faq extends Component {
                     <div className="answer">
                         <span className="text">Signing up is <b>not required</b>, but if you change browsers/devices or use a browser that clears its data*, you will be given a new account, so choose wisely. Your phone number will be used as your login and a text message is sent to verify who you are. <b>This info will not be shared with anyone</b>, and is only used to tie your data to you.</span>
                         <span className="text">If you verify your account and switch browsers or devices, you will be able to log back into your account.</span>
-                        <span className="text">To restore a verified account tap the login button and you will be asked to verify your phone number again.</span>
-                        <button onClick={() => this.props.history.push("/verify")}>Sign-Up/Login</button>
+                        {this.show_verify()}
                         <span className="footnote">*This includes, but is not limited to Firefox Focus, Ghostery, Red Onion, Secret Browser, etc. Playing in incognito mode will have the same effect.</span>
                     </div>
                 </div>
@@ -48,6 +119,7 @@ export default class Faq extends Component {
                         <span>I’m a JMU student that enjoys making things. This wouldn’t be much of a secret club if I revealed my identity would it?</span>
                     </div>
                 </div>
+                {this.show_delete_button()}
             </div>
         );
     }

@@ -1,0 +1,25 @@
+.confirm-button {
+  width: 100%;
+  background-color: #EE4266;
+  color: white;
+  height: 40px;
+  border-radius: 2px;
+  font-size: 13pt;
+  border: none;
+  -webkit-box-shadow: 0px 1px 4px rgba(146, 146, 146, 0.9);
+          box-shadow: 0px 1px 4px rgba(146, 146, 146, 0.9);
+  background-color: #EE4266;
+  color: white;
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+}
+
+.confirm-button.confirm {
+  background-color: #49ce37;
+}
+
+.confirm-button.done {
+  height: 0;
+  color: rgba(0, 0, 0, 0);
+}
+/*# sourceMappingURL=buttons.css.map */
