@@ -106,6 +106,12 @@
   height: 100%;
 }
 
+.svg-wrapper img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
 .section-text {
   color: #1B1B1B;
   text-align: center;

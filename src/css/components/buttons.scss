@@ -1,0 +1,24 @@
+// confirm button
+.confirm-button{
+    width: 100%;
+    background-color: #EE4266;
+    color: white;
+    height: 40px;
+    border-radius: 2px;
+    font-size: 13pt;
+    border: none;
+    box-shadow: 0px 1px 4px rgba(146,146,146,.9); 
+    background-color: #EE4266;
+    color: white;
+    transition: all ease 0.5s;
+    margin-bottom: 20px;
+
+    &.confirm{
+        background-color: #49ce37;
+    }
+
+    &.done{
+        height: 0;
+        color: rgba(0,0,0,0);
+    }
+}

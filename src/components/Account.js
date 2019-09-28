@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import "../css/pages/account.css";
-import { AlertTriangle } from "react-feather";
 import { UserCheck } from "react-feather";
+import wandr_pic from "../assets/images/wandr_pic.svg";
 
 /*
    This component catches users that don't have accounts 
@@ -15,13 +15,13 @@ export default class Account extends Component {
                 <div className="section-wrapper">
                     <div className="center-wrapper">
                         <div className="svg-wrapper">
-                            <AlertTriangle/>
+                            <img src={wandr_pic} alt={"wandr-logo"}></img>
                         </div>
                         <div className="section-text">
-                            To get an account you’ll need to scan one of many hidden QR codes somewhere on campus.
+                            You've stumbled upon something interesting.
                         </div>
                     </div>
-                    <button onClick={() => this.props.history.push("/faq")}>Learn More</button>
+                    <button onClick={() => this.props.history.push("/discovery/welcome")}>Join the game</button>
                 </div>
                 <div className="section-wrapper">
                     <div className="center-wrapper">

@@ -148,7 +148,7 @@ export default class App extends Component{
       <div className="app">
         <Router history={history}>
           <Switch>
-            <Route exact path="/faq" component={Faq}/>
+            <Route exact path="/faq" render={(props) => <Faq {...props} histroy={history} get_local_storage = {this.get_local_storage}/>}/>
             <Route path="/user" render={(props) => <User {...props} history={history} get_local_storage = {this.get_local_storage}/>}/>
             <Route path="/discovery" component={Discovery}/>
             <Route exact path="/verify" render={(props) => <Verification {...props} get_local_storage = {this.get_local_storage}/>}/>
