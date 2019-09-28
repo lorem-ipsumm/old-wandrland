@@ -22,7 +22,6 @@ export default class ConfirmButton extends Component {
         // get the button
         let button = e.target;
 
-
         // is this the first click?
         if (!button.classList.contains("confirm")) { 
             // toggle confirm style

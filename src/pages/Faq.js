@@ -11,6 +11,12 @@ import "../css/pages/faq.css";
 export default class Faq extends Component {
 
 
+    // logout user
+    logout = () => {
+        // clear the local storage
+       localStorage.clear(); 
+    }
+
     // handle confirm button confirm
     delete_account = () => {
         // check to see if the user is logged in
@@ -18,8 +24,12 @@ export default class Faq extends Component {
 
         //add the user credentials
         url += this.props.get_local_storage().variables.substring("1");
-        
-        console.log(url)
+
+
+
+        if (this.props.get_local_storage().count < 2) {
+            window.location.assign("/");
+        }
 
         // hit the delete_user endpoint
         return fetch(url, {
@@ -41,8 +51,6 @@ export default class Faq extends Component {
                     // clear local storage
                     localStorage.clear()
 
-                    console.log("deleted");
-
                     // redirect to user page
                     window.location.assign("/");
                 } else {
@@ -62,6 +70,7 @@ export default class Faq extends Component {
             return(
                 <div className="question-wrapper">
                     <ConfirmButton text="Delete Account" onConfirm={this.delete_account}/>
+                    <ConfirmButton text="Logout" onConfirm={this.logout}/>
                 </div>
             );
         }

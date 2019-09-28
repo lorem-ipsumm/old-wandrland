@@ -12,6 +12,7 @@
   color: white;
   -webkit-transition: all ease 0.5s;
   transition: all ease 0.5s;
+  margin-bottom: 20px;
 }
 
 .confirm-button.confirm {
