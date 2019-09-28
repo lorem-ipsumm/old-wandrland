@@ -18,14 +18,20 @@ export default class Verification extends Component {
         // setup config for login popup
         this.uiConfig = {
             // Popup signin flow rather than redirect flow.
-            signInFlow: 'popup',
+            signInFlow: 'redirect',
+            
+            // redirect to here after sign in
+            signInSuccessUrl: '/user/me',
+
             // callback function
+            /*
             callbacks: {
                 signInSuccessWithAuthResult: (e) => {
                     // send uid provided by google to the backend
                     this.send_verification(e.user.uid);
                 }
             },
+            */
 
             // We will display Google and Facebook as auth providers.
             signInOptions: [
@@ -34,6 +40,7 @@ export default class Verification extends Component {
             ]
         };
 
+        // set state
         this.state = {
             verification_complete: false
         }
@@ -73,6 +80,7 @@ export default class Verification extends Component {
                 // convert data to JSON
                 let json_data = JSON.parse(data);
 
+                // set state
                 this.setState({
                     verification_complete: true
                 });
@@ -88,7 +96,8 @@ export default class Verification extends Component {
 
                 if (json_data.success) {
                     // redirect to user page
-                    this.props.history.push("/user/me");
+                    // this.props.history.push("/user/me");
+                    window.location(window.location.hostname);
                 } else {
                     // TODO: display authentication failure message
                     this.props.history.push("/verify");

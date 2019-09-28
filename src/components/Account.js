@@ -18,10 +18,10 @@ export default class Account extends Component {
                             <AlertTriangle/>
                         </div>
                         <div className="section-text">
-                            To get an account you’ll need to scan one of many hidden QR codes somewhere on campus.
+                            You've stumbled upon something interesting.
                         </div>
                     </div>
-                    <button onClick={() => this.props.history.push("/faq")}>Learn More</button>
+                    <button onClick={() => this.props.history.push("/faq")}>Join the game</button>
                 </div>
                 <div className="section-wrapper">
                     <div className="center-wrapper">

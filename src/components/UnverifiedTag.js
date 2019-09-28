@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import "../css/components/tag_verification.css"
 import Confetti from 'react-confetti';
-import unverified_1 from "../gifs/unverified_1-min.gif";
-import unverified_2 from "../gifs/unverified_2-min.gif";
-import unverified_3 from "../gifs/unverified_3-min.gif";
-import unverified_4 from "../gifs/unverified_4-min.gif";
-import unverified_5 from "../gifs/unverified_5-min.gif";
+import unverified_1 from "../assets/gifs/unverified_1-min.gif";
+import unverified_2 from "../assets/gifs/unverified_2-min.gif";
+import unverified_3 from "../assets/gifs/unverified_3-min.gif";
+import unverified_4 from "../assets/gifs/unverified_4-min.gif";
+import unverified_5 from "../assets/gifs/unverified_5-min.gif";
 
 
 /*
