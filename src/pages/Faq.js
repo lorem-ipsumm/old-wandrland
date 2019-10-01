@@ -97,9 +97,17 @@ export default class Faq extends Component {
                         <span>What is this?</span>
                     </div>
                     <div className="answer">
-                        <span>There are QR codes hidden all around campus. Scan any QR code you find to increase your score. The harder it is to find, the more points you’ll get.</span>
+                        <span>There are QR codes hidden all around campus. Scan any QR code you find to increase your score. </span>
                     </div>
                     
+                </div>
+                <div className="question-wrapper">
+                    <div className="question">
+                        <span>What is rarity?</span>
+                    </div>
+                    <div className="answer">
+                        <span className="text">You can get more points if you find a tag that very few people have found. This is called <color className="color">rarity.</color> If you want to earn the most points, look for tags in spots you wouldn't expect them to be.</span>
+                    </div>
                 </div>
                 <div className="question-wrapper">
                     <div className="question">
@@ -112,6 +120,7 @@ export default class Faq extends Component {
                         <span className="footnote">*This includes, but is not limited to Firefox Focus, Ghostery, Red Onion, Secret Browser, etc. Playing in incognito mode will have the same effect.</span>
                     </div>
                 </div>
+                
                 <div className="question-wrapper">
                     <div className="question">
                         <span>Why is this?</span>
