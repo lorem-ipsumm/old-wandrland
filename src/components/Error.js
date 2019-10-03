@@ -8,13 +8,24 @@ import "../css/components/error.css";
 */
 
 export default class Error extends Component {
+
+    // triggered when button is clicked
+    button_clicked = () => {
+
+        // clear user variables
+        localStorage.clear();
+
+        // reload page
+        window.location.reload();
+    }
+
     render() {
         return(
             <div className="error-wrapper wrapper">
                 <span className="header">Uh oh</span>
                 <span className="text">It looks like something broke somewhere</span>
                 <span className="subtext">I apologize</span>
-                <button onClick={() => this.props.history.push("/")}>Home</button>
+                <button onClick={() => this.button_clicked()}>Home</button>
             </div>
         );
     }

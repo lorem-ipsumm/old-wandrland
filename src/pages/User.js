@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import "../css/pages/user.css";
 import Loading from "../components/Loading.js";
 import Account from '../components/Account';
+import  Error from "../components/Error.js";
 
 /*
     This class shows the user's stats. This includes
@@ -40,7 +41,9 @@ export default class User extends Component {
             // additional points for rarity
             rarity: 0,
             // state value for checking user verification
-            is_verified: false
+            is_verified: false,
+            // was there an error
+            error: undefined
         }
     }
 
@@ -85,7 +88,13 @@ export default class User extends Component {
                         });
                     },1500);
                 } else {
-                    console.log("whoop");
+                    // the user doesn't exist for some reason
+                    if (!json_data.user_exists) {
+                        // set error
+                        this.setState({
+                            error: json_data.error
+                        });
+                    }
                 }
             });
         });
@@ -103,10 +112,10 @@ export default class User extends Component {
                             <span>{tag.name}</span>
                         </div>
                         <div className="tag-worth">
-                            <span>{tag.worth} Points</span>
+                            <span>Worth: {tag.worth}pts</span>
                         </div>
                         <div className="tag-rarity">
-                            <span>{tag.rarity}</span>
+                            <span>Rarity: {tag.rarity.toFixed(2)}</span>
                         </div>
                     </div>   
                 )
@@ -155,9 +164,13 @@ export default class User extends Component {
 
 
     render() {
-        // check to see if the user has an account
-        // if two user variables are stored in local storage, show the page
-        if (this.props.get_local_storage().count >= 2){
+        if (this.state.error !== undefined) {
+            return(
+                <Error history={this.props.history}/>                
+            );
+        }else if (this.props.get_local_storage().count >= 2){
+            // check to see if the user has an account
+            // if two user variables are stored in local storage, show the page
             if (this.state.user_data_loaded) {
                 return(
                     <div className="user-wrapper wrapper">

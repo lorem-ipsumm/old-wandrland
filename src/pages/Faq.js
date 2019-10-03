@@ -98,6 +98,7 @@ export default class Faq extends Component {
                     </div>
                     <div className="answer">
                         <span>There are QR codes hidden all around campus. Scan any QR code you find to increase your score. </span>
+                        <span className="footnote">This game is still in its early stages so there are a couple bugs here are there. I'm trying my best!</span>
                     </div>
                     
                 </div>
