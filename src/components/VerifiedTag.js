@@ -61,9 +61,8 @@ export default class VerifiedTag extends Component {
 
     // calculate how many points the user will be awarded
     calculate_points = () => {
-
-        // check to see if the tag is an intro tag
-        if (!this.is_intro_tag()) {
+        // check to see if this is the users first find
+        if (!this.props.data.new_user) {
             // get the tag worth
             let worth = this.props.data.tag_data.worth;
             
@@ -88,7 +87,7 @@ export default class VerifiedTag extends Component {
 
                 <div className="discovery-info">
                     <div className="points-info">
-                        {this.show_rarity()}
+                        <span>Rarity: {this.props.data.tag_data.rarity.toFixed(2)}</span>
                         <span>Worth: {this.props.data.tag_data.worth}</span>
                     </div>
                     <span className="discovery-reward color">+{this.calculate_points()} Points!</span>
