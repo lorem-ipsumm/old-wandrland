@@ -82,7 +82,6 @@ export default class User extends Component {
                             tags_list: json_data.tags_list,
                             is_verified: json_data.is_verified,
                             user_name: json_data.user_name
-                            //rarity: json_data.tag_data.obtained/json_data.discovery_count
                         });
                     },1500);
                 } else {
@@ -105,6 +104,9 @@ export default class User extends Component {
                         </div>
                         <div className="tag-worth">
                             <span>{tag.worth} Points</span>
+                        </div>
+                        <div className="tag-rarity">
+                            <span>{tag.rarity}</span>
                         </div>
                     </div>   
                 )

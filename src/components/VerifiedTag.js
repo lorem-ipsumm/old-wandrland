@@ -44,16 +44,38 @@ export default class VerifiedTag extends Component {
     }
 
 
+    // return true if the tag is an intro tag
+    is_intro_tag = () => {
+        return(this.props.data.tag_data.intro);
+    }
+
+
+    show_rarity = () => {
+        if (!this.is_intro_tag()) {
+            return(
+                <span>Rarity: {this.props.data.tag_data.rarity.toFixed(2)}</span>
+            );
+        }
+    }
+
+
     // calculate how many points the user will be awarded
     calculate_points = () => {
-        // get the tag worth
-        let worth = this.props.data.tag_data.worth;
-        
-        // get the tag rarity
-        let rarity = this.props.data.tag_data.rarity;
 
-        // return the rounded rarity
-        return(Math.round(worth + (1/rarity)));
+        // check to see if the tag is an intro tag
+        if (!this.is_intro_tag()) {
+            // get the tag worth
+            let worth = this.props.data.tag_data.worth;
+            
+            // get the tag rarity
+            let rarity = this.props.data.tag_data.rarity;
+
+            // return the rounded rarity
+            return(Math.round(worth + (1/rarity)));
+        } else {
+            // return the tag worth
+            return this.props.data.tag_data.worth;
+        }
     }
 
     render() {
@@ -66,7 +88,7 @@ export default class VerifiedTag extends Component {
 
                 <div className="discovery-info">
                     <div className="points-info">
-                        <span>Rarity: {this.props.data.tag_data.rarity.toFixed(2)}</span>
+                        {this.show_rarity()}
                         <span>Worth: {this.props.data.tag_data.worth}</span>
                     </div>
                     <span className="discovery-reward color">+{this.calculate_points()} Points!</span>
