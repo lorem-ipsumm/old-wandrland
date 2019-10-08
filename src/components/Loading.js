@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import "../css/components/loading.css";
+import wandr_pic from "../assets/images/wandr_pic.svg";
 
 /*
     This component shows the user a loading screen while data is prepared
@@ -74,7 +75,11 @@ export default class Loading extends Component {
     render() {
         return(
             <div className="loading-wrapper wrapper">
-                <span className="loading">Loading</span>
+                <div className="loading">
+                        <img src={wandr_pic} alt={"wandr-logo"}></img>
+                        <span>wandr.<span className="color">land</span></span>
+                </div>
+
                 <div className="fact-wrapper">
                     <span className="did-you-know"><span className="color">Did You Know:</span> </span>
                     <span className="fact">{this.state.current_fact}</span>
