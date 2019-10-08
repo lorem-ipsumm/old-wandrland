@@ -24,18 +24,25 @@
 // loading text
 .loading{
     font-size: 18pt;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
     position: relative;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    img{
+        width: 25px;
+        height: 25px;
+        margin-right: 10px;
+    }
     &:after{
         content: '';
         position: absolute;
-        width: 50%;
-        bottom: 0;
-        height: 5px;
-        background-color: #EE4266;
+        bottom: -5px;
+        height: 3px;
         animation: slide 2s ease-in-out;
         animation-iteration-count: infinite;
+        background-color: #EE4266;
     }
 }
 
@@ -44,16 +51,19 @@
     0%{
         left: 0;
         width: 0;
+        //background-color: #EE4266;
     }
 
     50% {
         right: 0;
         width: 100%;
+        //background-color: #78386F;
     }
 
     90% {
         right: 0;
         width: 0;
+        //background-color: #EE4266;
     }
 
     100% {
