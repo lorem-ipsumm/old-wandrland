@@ -115,7 +115,11 @@ export default class User extends Component {
                             <span>Worth: {tag.worth}pts</span>
                         </div>
                         <div className="tag-rarity">
+                            {tag.rarity === undefined ? 
                             <span>Rarity: {tag.rarity.toFixed(2)}</span>
+                            :
+                            <span>Rarity: ???</span>
+                            }
                         </div>
                     </div>   
                 )
