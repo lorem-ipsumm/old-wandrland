@@ -42,6 +42,13 @@ header {
   font-size: 25pt;
   text-align: center;
   font-weight: bold;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .color {
@@ -123,6 +130,13 @@ canvas {
 .info-text span {
   width: 100%;
   color: #1e1e1e;
+}
+
+.footnote {
+  color: #565656;
+  font-size: 9pt;
+  margin: 5px 0px;
+  font-weight: 100;
 }
 
 .points-info {

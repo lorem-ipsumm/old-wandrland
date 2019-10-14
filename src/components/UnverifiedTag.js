@@ -43,7 +43,8 @@ export default class UnverifiedTag extends Component {
         if (this.props.data.duplicate) {
             return(
                 <div className="info-text">
-                    <span>It looks like you've already discovered this tag. Try looking for new ones!</span>
+                    <span>You can't rediscover this tag yet!</span>
+                    <span className="footnote">You can rediscover this tag in {30 - this.props.data.limit_minutes}:{60 - this.props.data.limit_seconds}</span>
                 </div>
             );
         } else {

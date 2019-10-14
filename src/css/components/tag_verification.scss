@@ -21,8 +21,9 @@
             height: 175px;    
         }
     }
-}
 
+    
+}
 
 .discovery-reward {
     font-weight: bolder;
@@ -34,6 +35,8 @@ header{
     font-size: 25pt;
     text-align: center;
     font-weight: bold;
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -92,6 +95,13 @@ canvas{
     }
 }
 
+
+.footnote{
+    color: #565656;
+    font-size: 9pt;
+    margin: 5px 0px;
+    font-weight: 100;
+}
 
 .points-info{
     width: 100%;

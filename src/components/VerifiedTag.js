@@ -82,7 +82,9 @@ export default class VerifiedTag extends Component {
             <div className="tag_verification-wrapper wrapper">
                 <img className="success-gif" alt="sucess-gif" onLoad={(e) => this.show_gif(e)} src={this.state.current_gif}/>
                 <header>
-                    <span className="discovery-name color">{this.props.data.tag_data.name}</span>
+                    <span className="footnote">You Discovered:</span>
+                    <span className="discovery-name color">"{this.props.data.tag_data.name}"</span>
+                    <span className="footnote">You can scan this tag again in 30 minutes</span>
                 </header>
 
                 <div className="discovery-info">
