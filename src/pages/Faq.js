@@ -92,12 +92,16 @@ export default class Faq extends Component {
     render() {
         return(
             <div className="faq-wrapper wrapper">
+                <div className="welcome-wrapper">
+                    <span className="text">Welcome to wandr.land</span>
+                </div>
                 <div className="question-wrapper">
                     <div className="question">
                         <span>What is this?</span>
                     </div>
                     <div className="answer">
-                        <span>There are QR codes hidden all around campus. Scan any QR code you find to increase your score. </span>
+                        <span className="text">There are QR codes hidden all around campus. Scan any QR code you find to increase your score. </span>
+                        <span className="text">You can rescan QR codes after 30 minutes have passed since the previous scan, though you will get more points for finding new ones.</span>
                         <span className="footnote">This game is still in its early stages so there are a couple bugs here are there. I'm trying my best!</span>
                     </div>
                     
@@ -135,7 +139,7 @@ export default class Faq extends Component {
                         <span>Who is this?</span>
                     </div>
                     <div className="answer">
-                        <span>I’m a JMU student that enjoys making things. This wouldn’t be much of a secret club if I revealed my identity would it?</span>
+                        <span>I’m a guy who enjoys making things. This wouldn’t be much of a secret club if I revealed my identity would it?</span>
                     </div>
                 </div>
                 {this.show_delete_button()}
