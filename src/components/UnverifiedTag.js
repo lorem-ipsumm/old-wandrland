@@ -44,7 +44,7 @@ export default class UnverifiedTag extends Component {
             return(
                 <div className="info-text">
                     <span>You can't rediscover this tag yet!</span>
-                    <span className="footnote">You can rediscover this tag in {30 - this.props.data.limit_minutes}:{60 - this.props.data.limit_seconds}</span>
+                    <span className="footnote">You can rediscover this tag in {30 - this.props.data.limit_minutes}:{60 - this.props.data.limit_seconds.toLocaleString(undefined, {minimumIntegerDigits:2})}</span>
                 </div>
             );
         } else {
