@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import AdSense from 'react-adsense';
 import "../css/components/loading.css";
 import wandr_pic from "../assets/images/wandr_pic.svg";
 
@@ -84,6 +85,13 @@ export default class Loading extends Component {
                     <span className="did-you-know"><span className="color">Did You Know:</span> </span>
                     <span className="fact">{this.state.current_fact}</span>
                 </div>
+                <AdSense.Google
+                    client='ca-pub-7292810486004926'
+                    slot='7806394673'
+                    style={{ display: 'block' }}
+                    layout='in-article'
+                    format='fluid'
+                />
                 <div className="loading-message">
                     <span>It looks like your connection is weak. Please be patient. If this cotinues try refreshing the page.</span>
                 </div>
