@@ -53,6 +53,7 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  width: 85%;
 }
 
 .color {
