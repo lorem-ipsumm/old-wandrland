@@ -42,8 +42,12 @@
     animation-iteration-count: initial;
     position: relative;
     .tag-name{
-        font-size: 13pt;
+        font-size: 11pt;
         margin-bottom: 5px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .tag-worth{
         font-size: 10pt;
