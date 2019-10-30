@@ -38,6 +38,10 @@
   font-weight: bolder;
 }
 
+.discovery-name {
+  font-size: 12pt;
+}
+
 header {
   font-size: 25pt;
   text-align: center;
