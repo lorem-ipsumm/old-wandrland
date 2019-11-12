@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import AdSense from 'react-adsense';
 import "../css/components/loading.css";
 import wandr_pic from "../assets/images/wandr_pic.svg";
 
@@ -36,6 +37,7 @@ export default class Loading extends Component {
     // wait five seconds before showing bad connection message
     componentDidMount = () => {
 
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
 
         // get a new fact whenever the component mounts
         this.setState({
@@ -84,6 +86,18 @@ export default class Loading extends Component {
                     <span className="did-you-know"><span className="color">Did You Know:</span> </span>
                     <span className="fact">{this.state.current_fact}</span>
                 </div>
+
+                
+                <AdSense.Google
+                    client='ca-pub-9847814503069204'
+                    layoutKey='-gw-3+1f-3d+2z'
+                    format='fluid'
+                    slot='7806394673'
+                    style={{ display: 'block' }}
+                    layout='in-article'
+                />
+                
+
                 <div className="loading-message">
                     <span>It looks like your connection is weak. Please be patient. If this cotinues try refreshing the page.</span>
                 </div>
