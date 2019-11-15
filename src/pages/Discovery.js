@@ -81,7 +81,7 @@ export default class Discovery extends Component {
     }
 
     // once the component mounts:
-    // 1. send the tag to the function to verify
+    // 1. send the tag to the cloud function to verify
     // 2. if verified, show user's new score and the name of the tag
     componentDidMount = () => {
 
