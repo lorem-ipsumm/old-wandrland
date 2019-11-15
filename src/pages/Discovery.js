@@ -118,8 +118,6 @@ export default class Discovery extends Component {
                 // convert data to JSON
                 let json_data = JSON.parse(data);
 
-                console.log(json_data);
-
                 // iterate through the data being returned
                 Object.keys(json_data).forEach(function(key) {
                     // check if it's 'important'
