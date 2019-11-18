@@ -28,6 +28,7 @@ export default class Discovery extends Component {
             verification_data: {}
         }
 
+
         this.error_response = "";
     }
 

@@ -26,6 +26,8 @@ export default class UnverifiedTag extends Component {
             unverified_5
         ];
 
+        this.foods = ["pizza", "saltines", "tomatoes", "popcorn", "bread", "friends", "burritos"];
+
         this.state = {
             // the gif being shown
             current_gif: ""
@@ -73,6 +75,10 @@ export default class UnverifiedTag extends Component {
                 {this.display_error()}
                 <div className="discovery-button-wrapper">
                     <button onClick={() => this.props.history.push("/user/me")}>Okay</button>
+                </div>
+                <div className="discovery-button-wrapper">
+                    <a href="https://groupme.com/join_group/55829888/Ii0GgjzC">{this.foods[Math.floor(Math.random()*this.foods.length)]}?</a>
+                    <span className="footnote">don't touch that link</span>
                 </div>
                 <Confetti opacity={.5} numberOfPieces={10}  recycle={false} style={{"z-index": "1"}}/>
             </div>

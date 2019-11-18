@@ -73,6 +73,7 @@ canvas{
     align-items: center;
     margin-top: 15px;
     z-index: 2;
+    flex-direction: column;
     button{
         width: 100px;    
         height: 40px;
@@ -82,6 +83,12 @@ canvas{
         box-shadow: 0px 1px 4px rgba(146,146,146,.9); 
         background-color: #EE4266;
         color: white;
+    }
+
+    a{
+        margin-top: 15px;
+        display: block;
+        margin-bottom: 10px;
     }
 }
 

@@ -10,6 +10,11 @@ import "../css/pages/faq.css";
 
 export default class Faq extends Component {
 
+    constructor(props){
+        super(props);
+
+        this.foods = ["pizza", "saltines", "tomatoes", "popcorn", "bread", "friends", "burritos"];
+    }
 
     // logout user
     logout = () => {
@@ -95,6 +100,7 @@ export default class Faq extends Component {
                 <div className="welcome-wrapper">
                     <span className="text">Welcome to wandr.land</span>
                 </div>
+                
                 <div className="question-wrapper">
                     <div className="question">
                         <span>What is this?</span>
@@ -113,6 +119,12 @@ export default class Faq extends Component {
                     <div className="answer">
                         <span className="text">You can get more points if you find a tag that very few people have found. This is called <color className="color">rarity.</color> If you want to earn the most points, look for tags in spots you wouldn't expect them to be.</span>
                     </div>
+                </div>
+                <div className="question-wrapper">
+                    <div className="question">
+                        <a href="https://groupme.com/join_group/55829888/Ii0GgjzC">{this.foods[Math.floor(Math.random()*this.foods.length)]}?</a>
+                        <span className="footnote">Hey don't touch that</span>
+                    </div >
                 </div>
                 <div className="question-wrapper">
                     <div className="question">
