@@ -216,9 +216,12 @@ export default class Home extends Component {
                 <Error history={this.props.history}/>                
             );
         } else if (this.props.get_local_storage().count < 2) {
+            window.location.assign("https://jmucitations.netlify.com?player=false");
+
             // if the user doesn't have an account show the account info page
             return(
                 <Account history={this.props.history}/>
+                
             );
         } else {
             // otherwise show the regular data
