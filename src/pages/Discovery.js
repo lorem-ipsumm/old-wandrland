@@ -138,7 +138,7 @@ export default class Discovery extends Component {
                         verification_data: json_data
                     });
 
-
+                    // redirect to citations
                     if (this.state.verification_data.new_user === false)
                         window.location.assign("https://jmucitations.netlify.com?player=false");
                     else

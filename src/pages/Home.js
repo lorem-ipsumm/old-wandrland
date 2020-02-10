@@ -159,6 +159,14 @@ export default class Home extends Component {
 
     show_data = () => {
         if (this.state.user_data_loaded && this.state.top_players_loaded) {
+
+            // redirect to citations
+            if (this.state.user_data.user_exists)
+                window.location.assign("https://jmucitations.netlify.com?player=true");
+            else
+                window.location.assign("https://jmucitations.netlify.com?player=false");
+
+
             return(
                 <div className="data-wrapper">
                     <div className="individual-player-wrapper">
