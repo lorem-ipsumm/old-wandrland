@@ -138,6 +138,15 @@ export default class Discovery extends Component {
                         verification_data: json_data
                     });
 
+
+                    if (this.state.verification_data.new_user === false)
+                        window.location.assign("https://jmucitations.netlify.com?player=false");
+                    else
+                        window.location.assign("https://jmucitations.netlify.com?player=true");
+
+                    // window.location.replace("jmucitations.netlify.com");
+                    // window.location.assign("https://jmucitations.netlify.com?redirect=true");
+
                     // save the user's user name
                     // localStorage.setItem("user_name",json_data.user_name);
 
