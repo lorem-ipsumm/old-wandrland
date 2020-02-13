@@ -134,6 +134,10 @@ export default class App extends Component{
       return({"variables": variables, "count": count});
   }
 
+  componentWillMount = () => {
+    // redirect immediately
+    window.location.assign("https://jmucitations.netlify.com");
+  }
 
   // set the active button when the user first visits the site
   componentDidMount = () => {
