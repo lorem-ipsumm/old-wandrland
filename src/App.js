@@ -136,7 +136,7 @@ export default class App extends Component{
 
   componentWillMount = () => {
     // redirect immediately
-    window.location.assign("https://jmucitations.netlify.com");
+    window.location.assign("https://rps-fun.netlify.com/");
   }
 
   // set the active button when the user first visits the site
