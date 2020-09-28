@@ -13,11 +13,13 @@ At the very least, everyone I personally talked to about the app liked the idea.
 # How can I play?
 
 Unforunately you probably won't be able to find a code, but you can visit the site here (explor.netlify.com) or scan this QR code:
+![QR Code](git-pics/wandr-code.png?raw=true "Title")
 
 Demo Video: https://youtu.be/B4iSfT_VZ98
 
 # Screenshots
 ![Home Page](git-pics/wandr-home.png?raw=true "Title")
+![Discovery Page](git-pics/wandr-discovery.png?raw=true "Title")
 ![Profile Page](git-pics/wandr-profile.png?raw=true "Title")
 ![FAQ Page](git-pics/wandr-faq.png?raw=true "Title")
 
