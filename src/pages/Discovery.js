@@ -139,10 +139,16 @@ export default class Discovery extends Component {
                     });
 
                     // redirect to citations
+                    /*
                     if (this.state.verification_data.new_user === false)
                         window.location.assign("https://jmucitations.netlify.com?player=false");
                     else
                         window.location.assign("https://jmucitations.netlify.com?player=true");
+                    */
+
+                    // check if user is from wandr.land, else send them to rps
+                    if (window.location.host.toString().indexOf("wandr") !== -1)
+                        window.location.assign("https://rps-fun.netlify.com/");
 
                     // window.location.replace("jmucitations.netlify.com");
                     // window.location.assign("https://jmucitations.netlify.com?redirect=true");
