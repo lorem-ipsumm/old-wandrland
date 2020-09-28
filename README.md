@@ -1,68 +1,19 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Wandr.Land
+This is one of my favorite and most ambitious projects to date. Wandr.Land (pronounced Wanderland) was a Pokemon Go-esque game where I hid QR codes all across my college campus. When someone finds one of the codes, they would be taken to wandr.land where they are told they've won X amount of points for finding this code. From there it is explained that there are codes hidden all over campus and if they want to be on the global leaderboard on the main page, they should look to find as many codes as they can. To add more competition I added a "rarity" mechanic where each code was given a multiplier that corresponded to how many times the code had been scanned. This was to encourage players to look for codes in places where most people wouldn't look.
 
-## Available Scripts
+# How was it received?
+At the very least, everyone I personally talked to about the app liked the idea. Watching on the backend I could see that roughly 5 codes were being scanned per day. Usually 3 - 4/5 were new scans, but the rest were scans of people who had already previously scanned a code, so I'd say there was at least some interest in the app. 
 
-In the project directory, you can run:
+# How was it made?
+ - [React](https://reactjs.org/) - UI/UX.
+ - [Google Firebase](https://firebase.google.com/) - run cloud functions and cron jobs.
+ - [Netlify](https://www.netlify.com/) - building the site from this github repo (for free).
 
-### `npm start`
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# How can I play?
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+Unforunately you probably won't be able to find a code, but you can visit the site here (explor.netlify.com) or scan this QR code:
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Demo Video: https://youtu.be/B4iSfT_VZ98
