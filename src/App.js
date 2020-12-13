@@ -135,6 +135,8 @@ export default class App extends Component{
   }
 
   componentWillMount = () => {
+    // get the tag from the URL
+    let tag = window.location.pathname.substr(window.location.pathname.lastIndexOf("/")+1);
 
     // redirect immediately if user comes from wandr.land
     //if (window.location.host.toString().indexOf("wandr") !== -1)
