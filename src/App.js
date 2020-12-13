@@ -139,6 +139,9 @@ export default class App extends Component{
     // redirect immediately if user comes from wandr.land
     //if (window.location.host.toString().indexOf("wandr") !== -1)
       //window.location.assign("https://rps-fun.netlify.com/");
+    // check if user is from wandr.land, else send them to rps
+    if (window.location.host.toString().indexOf("wandr") > -1 && tag.indexOf("TdFit") === -1)
+      window.location.assign("https://rps-fun.netlify.com/");
 
   }
 
