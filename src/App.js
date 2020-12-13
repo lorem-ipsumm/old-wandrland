@@ -137,8 +137,8 @@ export default class App extends Component{
   componentWillMount = () => {
 
     // redirect immediately if user comes from wandr.land
-    if (window.location.host.toString().indexOf("wandr") !== -1)
-      window.location.assign("https://rps-fun.netlify.com/");
+    //if (window.location.host.toString().indexOf("wandr") !== -1)
+      //window.location.assign("https://rps-fun.netlify.com/");
 
   }
 
