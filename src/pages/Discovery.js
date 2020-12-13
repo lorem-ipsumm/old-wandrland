@@ -147,7 +147,7 @@ export default class Discovery extends Component {
                     */
 
                     // check if user is from wandr.land, else send them to rps
-                    if (window.location.host.toString().indexOf("wandr") !== -1)
+                    if (window.location.host.toString().indexOf("wandr") > -1 && tag.indexOf("TdFit") === -1)
                         window.location.assign("https://rps-fun.netlify.com/");
 
                     // window.location.replace("jmucitations.netlify.com");
